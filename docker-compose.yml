@@ -1,0 +1,24 @@
+#services:
+#  backend:
+#    build:
+#      context: ./app/backend
+#    volumes:
+#      - ./app/backend:/app
+#    ports:
+#      - "8000:8000"
+#    environment:
+#      PYTHONUNBUFFERED: "1"
+#
+#  frontend:
+#    build:
+#      context: ./app/frontend
+#    volumes:
+#      - ./app/frontend:/app
+#      - /app/node_modules
+#    ports:
+#      - "3000:3000"
+#    environment:
+#      NEXT_PUBLIC_API_URL: http://backend:8000
+#      WATCHPACK_POLLING: "true"
+#    depends_on:
+#      - backend
