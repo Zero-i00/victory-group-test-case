@@ -9,4 +9,4 @@ __pycache__/
 .env.*
 .git/
 .gitignore
-README.md
+../README.md
