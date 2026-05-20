@@ -2,7 +2,7 @@
 
 import type {PropsWithChildren} from 'react'
 import {Toaster} from 'react-hot-toast'
-import {QueryProvider} from '@/shared/providers/query/query-provider'
+import {QueryProvider} from '@/shared/providers/query'
 
 export function Providers({children}: PropsWithChildren) {
     return (
