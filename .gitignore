@@ -16,15 +16,39 @@ build/
 # uv
 .uv/
 
-# Node / Next.js
+# Node / Bun
 node_modules/
+.pnp
+.pnp.*
+
+# Next.js
 .next/
 out/
+next-env.d.ts
+
+# Testing
+coverage/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
 
 # Env
 .env
 .env.local
 .env.*.local
+
+# Vercel
+.vercel
 
 # IDE
 .idea/
@@ -33,7 +57,6 @@ out/
 *.swo
 
 # OS
-.DS_Store
 Thumbs.db
 
 # AI
