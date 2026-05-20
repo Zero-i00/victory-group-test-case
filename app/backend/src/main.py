@@ -5,6 +5,7 @@ from core.config import get_settings
 from modules.employee import employee_resolver
 from modules.product import product_resolver
 from modules.review import review_resolver
+from modules.application import application_resolver
 
 settings = get_settings()
 
@@ -22,6 +23,7 @@ async def health_check() -> dict[str, str]:
 api_v1_router.include_router(product_resolver.router)
 api_v1_router.include_router(employee_resolver.router)
 api_v1_router.include_router(review_resolver.router)
+api_v1_router.include_router(application_resolver.router)
 
 app.include_router(api_v1_router)
 
