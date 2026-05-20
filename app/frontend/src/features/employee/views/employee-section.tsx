@@ -1,12 +1,12 @@
 'use client'
 
-import {useInfiniteQuery} from '@tanstack/react-query'
+import {useSuspenseInfiniteQuery} from '@tanstack/react-query'
 import type {ComponentProps} from 'react'
 import {employeeQuery} from '@/features/employee/queries/employee.query'
 import {SECTION_CONFIG} from '@/shared/configs/section.config'
 
 export function EmployeeSection({id = SECTION_CONFIG.EMPLOYEE, ...rest}: ComponentProps<'section'>) {
-    const {data} = useInfiniteQuery(employeeQuery.list())
+    const {data} = useSuspenseInfiniteQuery(employeeQuery.list())
 
     console.log(data)
 

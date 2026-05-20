@@ -1,18 +1,33 @@
-import {Fragment} from 'react'
+import {dehydrate, HydrationBoundary} from '@tanstack/react-query'
+import {Suspense} from 'react'
 import {AboutSection} from '@/features/about'
 import {EmployeeSection} from '@/features/employee'
-import {HeroSection} from '@/features/hero/'
+import {employeeQuery} from '@/features/employee/queries/employee.query'
+import {HeroSection} from '@/features/hero'
 import {ProductSection} from '@/features/product'
+import {productQuery} from '@/features/product/queries/product.query'
 import {ReviewSection} from '@/features/review'
+import {reviewQuery} from '@/features/review/queries/review.query'
+import {getQueryClient} from '@/shared/providers/query'
 
-export default function Home() {
+export default async function Home() {
+    const queryClient = getQueryClient()
+
+    await Promise.all([
+        queryClient.prefetchInfiniteQuery(productQuery.list()),
+        queryClient.prefetchInfiniteQuery(employeeQuery.list()),
+        queryClient.prefetchInfiniteQuery(reviewQuery.list()),
+    ])
+
     return (
-        <Fragment>
-            <HeroSection/>
-            <ProductSection/>
-            <EmployeeSection/>
-            <AboutSection/>
-            <ReviewSection/>
-        </Fragment>
+        <HydrationBoundary state={dehydrate(queryClient)}>
+            <Suspense fallback={null}>
+                <HeroSection/>
+                <ProductSection/>
+                <EmployeeSection/>
+                <AboutSection/>
+                <ReviewSection/>
+            </Suspense>
+        </HydrationBoundary>
     )
 }
