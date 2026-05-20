@@ -4,18 +4,18 @@ from core.pagination import (
     PaginationDepend,
     PaginationResponse,
 )
-from modules.product.schema import ProductSchema
+from modules.product.schema import ProductSchemaOut
 from modules.product.service import product_service
 
 
 class ProductResolver:
-    router = APIRouter(prefix="/product", tags=["Product"])
+    router = APIRouter(prefix="/products", tags=["Product"])
 
     @staticmethod
-    @router.get("/", status_code=status.HTTP_200_OK)
+    @router.get("", status_code=status.HTTP_200_OK)
     def list(
         pagination: PaginationDepend,
-    ) -> PaginationResponse[ProductSchema]:
+    ) -> PaginationResponse[ProductSchemaOut]:
         return product_service.list(pagination)
 
 

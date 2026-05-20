@@ -1,12 +1,11 @@
 from pydantic import BaseModel
 
-
-class StaffSchema(BaseModel):
+class StaffSchemaOut(BaseModel):
     id: int
     title: str
 
 
-class EmployeeSchema(BaseModel):
+class EmployeeSchemaOut(BaseModel):
     id: int
 
     photo: str
@@ -14,7 +13,7 @@ class EmployeeSchema(BaseModel):
     full_name: str
     description: str
 
-    staff: StaffSchema
+    staff: StaffSchemaOut
 
     is_active: bool = True
 

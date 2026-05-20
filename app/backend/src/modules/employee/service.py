@@ -5,7 +5,7 @@ from core.pagination import (
 )
 
 from .data import mock_employee_table
-from .schema import EmployeeSchema
+from .schema import EmployeeSchemaOut
 
 
 class EmployeeService:
@@ -14,8 +14,10 @@ class EmployeeService:
         ...
 
     @staticmethod
-    def list(pagination: PaginationRequest) -> PaginationResponse[EmployeeSchema]:
+    def list(pagination: PaginationRequest) -> PaginationResponse[EmployeeSchemaOut]:
         return build_pagination_response(mock_employee_table, pagination)
 
+
+    # TODO другие методы взаимодействия с бд (+ добавить async): create, retrieve, update, destroy
 
 employee_service = EmployeeService()

@@ -1,25 +1,34 @@
 from fastapi import APIRouter, FastAPI, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from core.config import get_settings
+from modules.application import application_resolver
 from modules.employee import employee_resolver
 from modules.product import product_resolver
 from modules.review import review_resolver
-from modules.application import application_resolver
 
 settings = get_settings()
 
 app = FastAPI(title=settings.title)
-app.mount("/static", StaticFiles(directory="/app/static"), name="static")
 
-api_v1_router = APIRouter(prefix="/api/v1", tags=["API v1"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.allowed_hosts,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.mount("/static", StaticFiles(directory=settings.static_path), name="static")
 
 
-@api_v1_router.get("/health", status_code=status.HTTP_200_OK)
+@app.get("/health", status_code=status.HTTP_200_OK, tags=["Health"])
 async def health_check() -> dict[str, str]:
     return {"status": "ok"}
 
 
+api_v1_router = APIRouter(prefix="/api/v1", tags=["API v1"])
 api_v1_router.include_router(product_resolver.router)
 api_v1_router.include_router(employee_resolver.router)
 api_v1_router.include_router(review_resolver.router)

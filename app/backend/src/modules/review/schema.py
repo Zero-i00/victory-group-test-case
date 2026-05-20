@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class ReviewSchema(BaseModel):
+class ReviewSchemaOut(BaseModel):
     id: int
 
     recipient_city: str

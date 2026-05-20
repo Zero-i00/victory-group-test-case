@@ -9,13 +9,14 @@ class ApplicationService:
 
     @staticmethod
     def create(data: ApplicationSchemaIn) -> ApplicationSchemaOut:
-        # TODO Какая-то логика обработки заявки; Взаимодействие с бд
+        # TODO Какая-то логика обработки заявки
 
         return ApplicationSchemaOut(
             uuid=uuid4(),
             full_name=data.full_name,
-            email=data.email,
+            email=str(data.email),
         )
 
+    # TODO другие методы взаимодействия с бд (+ добавить async): list, retrieve, update, destroy
 
 application_service = ApplicationService()

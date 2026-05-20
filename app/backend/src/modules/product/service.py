@@ -5,7 +5,7 @@ from core.pagination import (
 )
 
 from .data import mock_product_table
-from .schema import ProductSchema
+from .schema import ProductSchemaOut
 
 
 class ProductService:
@@ -14,8 +14,10 @@ class ProductService:
         ...
 
     @staticmethod
-    def list(pagination: PaginationRequest) -> PaginationResponse[ProductSchema]:
+    def list(pagination: PaginationRequest) -> PaginationResponse[ProductSchemaOut]:
         return build_pagination_response(mock_product_table, pagination)
 
+
+    # TODO другие методы взаимодействия с бд (+ добавить async): create, retrieve, update, destroy
 
 product_service = ProductService()

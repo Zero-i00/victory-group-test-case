@@ -1,17 +1,14 @@
-from fastapi import (
-    status,
-    APIRouter
-)
+from fastapi import APIRouter, status
 
 from .schema import ApplicationSchemaIn, ApplicationSchemaOut
 from .service import application_service
 
 
 class ApplicationResolver:
-    router = APIRouter(prefix='/application', tags=['Application'])
+    router = APIRouter(prefix="/applications", tags=["Application"])
 
     @staticmethod
-    @router.post('/', status_code=status.HTTP_201_CREATED)
+    @router.post("", status_code=status.HTTP_201_CREATED)
     def create(
         data: ApplicationSchemaIn,
     ) -> ApplicationSchemaOut:

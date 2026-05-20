@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BaseConfig = SettingsConfigDict(
@@ -15,6 +16,9 @@ class Settings(BaseSettings):
     port: int = 8000
     host: str = "localhost"
     title: str = "DentistAm API"
+
+    static_path: str = "static"
+    allowed_hosts: list[str] = Field(default_factory=list)
 
 
 @lru_cache

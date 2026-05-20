@@ -46,7 +46,7 @@ def build_pagination_response[T](
         total=total,
         page=pagination.page,
         per_page=pagination.per_page,
-        pages=ceil(total / pagination.per_page),
+        pages=max(1, ceil(total / pagination.per_page)),
     )
 
 

@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class ProductSchema(BaseModel):
+class ProductSchemaOut(BaseModel):
     id: int
 
     title: str

@@ -9,6 +9,4 @@ class ApplicationSchemaIn(BaseModel):
 
 class ApplicationSchemaOut(ApplicationSchemaIn):
     uuid: UUID
-    full_name: str
-    email: str
 
