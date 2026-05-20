@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+PROJECT_NAME="Soft Tutor"
+
+restart() {
+  echo "[$PROJECT_NAME] Restarting..."
+  docker compose down
+  docker compose up --build -d
+}
+
+help() {
+    echo "Usage:"
+    echo "  ./run restart"
+}
+
+COMMAND=${1:-help}
+
+case "$COMMAND" in
+    restart|logs)
+        "$COMMAND"
+        ;;
+    *)
+        help
+        exit 1
+        ;;
+esac
