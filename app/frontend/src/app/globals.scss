@@ -28,7 +28,7 @@
 
   // Surface
   --surface-body: var(--color-white);
-  --surface-card: #fdf2f5;
+  --surface-card: var(--color-white);
   --surface-popover: var(--color-white);
 
   // Utils
@@ -80,11 +80,11 @@
   --rounded-full: 9999px;
 
   // ──── Icons ────
-  --icon-xs: 10px;
-  --icon-sm: 14px;
-  --icon-md: 22px;
-  --icon-lg: 28px;
-  --icon-xl: 32px;
+  --icon-xs: 4px;
+  --icon-sm: 8px;
+  --icon-md: 16px;
+  --icon-lg: 22px;
+  --icon-xl: 28px;
 
   // ──── Z-index ────
   --z-base: 0;
