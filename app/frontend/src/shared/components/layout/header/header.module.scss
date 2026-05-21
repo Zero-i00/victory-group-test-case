@@ -6,7 +6,7 @@
   transition: box-shadow var(--transition-base) ease;
 
   &[data-scrolled='true'] {
-    box-shadow: var(--shadow-card-md);
+    box-shadow: var(--shadow-md);
   }
 
   &__inner {

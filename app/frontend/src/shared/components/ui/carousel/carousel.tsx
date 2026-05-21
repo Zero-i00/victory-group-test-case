@@ -6,7 +6,7 @@ import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react'
 import type { ComponentProps } from 'react'
 import { useCallback, useEffect, useState } from 'react'
 import { Button } from '@/shared/components/ui/button'
-import { CarouselContext, useCarousel } from './carousel.context'
+import { CarouselContext, useCarouselContext } from './carousel.context'
 import styles from './carousel.module.scss'
 import type { CarouselArrowProps, CarouselItemProps, CarouselProps } from './carousel.props'
 
@@ -53,7 +53,14 @@ function CarouselRoot({
         <CarouselContext.Provider
             value={{ carouselRef, api, orientation, canScrollPrev, canScrollNext, scrollPrev, scrollNext }}
         >
-            <div role="region" className={cn(styles.carousel, className)} aria-roledescription="carousel" {...rest}>
+            <div
+                data-slot="carousel"
+                data-orientation={orientation}
+                role="region"
+                aria-roledescription="carousel"
+                className={cn(styles.carousel, className)}
+                {...rest}
+            >
                 {children}
             </div>
         </CarouselContext.Provider>
@@ -61,14 +68,10 @@ function CarouselRoot({
 }
 
 function CarouselContent({ className, ...rest }: ComponentProps<'ul'>) {
-    const { carouselRef, orientation } = useCarousel()
+    const { carouselRef } = useCarouselContext()
     return (
-        <div ref={carouselRef} className={styles.carousel__viewport}>
-            <ul
-                role="list"
-                className={cn(styles.carousel__track, styles[`carousel__track--${orientation}`], className)}
-                {...rest}
-            />
+        <div data-slot="carousel-viewport" ref={carouselRef} className={styles.carousel__viewport}>
+            <ul data-slot="carousel-content" role="list" className={cn(styles.carousel__track, className)} {...rest} />
         </div>
     )
 }
@@ -77,6 +80,7 @@ function CarouselItem({ className, index, total, ...rest }: CarouselItemProps) {
     const slideLabel = index !== undefined && total !== undefined ? `Слайд ${index + 1} из ${total}` : undefined
     return (
         <li
+            data-slot="carousel-item"
             role="group"
             aria-roledescription="slide"
             aria-label={slideLabel}
@@ -87,39 +91,43 @@ function CarouselItem({ className, index, total, ...rest }: CarouselItemProps) {
 }
 
 function CarouselPrev({ className, ...rest }: CarouselArrowProps) {
-    const { scrollPrev, canScrollPrev, orientation } = useCarousel()
+    const { scrollPrev, canScrollPrev, orientation } = useCarouselContext()
     const isVertical = orientation === 'vertical'
     const Icon = isVertical ? ChevronUp : ChevronLeft
     return (
         <Button
+            data-slot="carousel-prev"
+            data-orientation={orientation}
             variant="icon"
             size="md"
             disabled={!canScrollPrev}
             onClick={scrollPrev}
             aria-label="Предыдущий слайд"
-            className={cn(styles.carousel__arrow, styles[`carousel__arrow--prev-${orientation}`], className)}
+            className={cn(styles.carousel__arrow, styles['carousel__arrow--prev'], className)}
             {...rest}
         >
-            <Icon aria-hidden="true" size={isVertical ? 28 : 24} />
+            <Icon aria-hidden="true" className={styles.carousel__icon} />
         </Button>
     )
 }
 
 function CarouselNext({ className, ...rest }: CarouselArrowProps) {
-    const { scrollNext, canScrollNext, orientation } = useCarousel()
+    const { scrollNext, canScrollNext, orientation } = useCarouselContext()
     const isVertical = orientation === 'vertical'
     const Icon = isVertical ? ChevronDown : ChevronRight
     return (
         <Button
+            data-slot="carousel-next"
+            data-orientation={orientation}
             variant="icon"
             size="md"
             disabled={!canScrollNext}
             onClick={scrollNext}
             aria-label="Следующий слайд"
-            className={cn(styles.carousel__arrow, styles[`carousel__arrow--next-${orientation}`], className)}
+            className={cn(styles.carousel__arrow, styles['carousel__arrow--next'], className)}
             {...rest}
         >
-            <Icon aria-hidden="true" size={isVertical ? 28 : 24} />
+            <Icon aria-hidden="true" className={styles.carousel__icon} />
         </Button>
     )
 }

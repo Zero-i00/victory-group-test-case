@@ -1,8 +1,29 @@
-../node_modules/
+# Dependencies
+node_modules/
+
+# Build output
 .next/
 out/
+
+# TypeScript incremental build info
+tsconfig.tsbuildinfo
+
+# Env files
 .env
 .env.*
+
+# Git
 .git/
 .gitignore
+
+# Docs & project-specific files
 README.md
+EXPLAIN.md
+CHECK.md
+CLAUDE.md
+
+# Design assets
+design/
+
+# Docker
+docker-compose.yml

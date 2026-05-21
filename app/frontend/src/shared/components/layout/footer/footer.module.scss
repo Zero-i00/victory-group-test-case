@@ -64,14 +64,12 @@
 
     &--left {
       @media (min-width: 1024px) {
-        grid-area: left;
         align-items: flex-start;
       }
     }
 
     &--right {
       @media (min-width: 1024px) {
-        grid-area: right;
         align-items: flex-end;
       }
     }
@@ -119,7 +117,9 @@
       grid-area: circle;
     }
 
-    &:hover { opacity: 0.85; }
+    &:hover {
+      opacity: 0.85;
+    }
 
     &:focus-visible {
       outline: var(--focus-ring);

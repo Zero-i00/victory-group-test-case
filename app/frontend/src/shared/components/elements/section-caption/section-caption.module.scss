@@ -1,11 +1,9 @@
 
 .section-caption {
-  --section-caption-shadow: var(--shadow-card-sm);
-
   width: fit-content;
   border-radius: var(--rounded-xl);
   padding: 0 var(--spacing-md);
-  box-shadow: var(--section-caption-shadow);
+  box-shadow: var(--shadow-sm);
 }
 
 .section-caption__text {

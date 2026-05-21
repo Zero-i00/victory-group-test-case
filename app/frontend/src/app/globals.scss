@@ -34,7 +34,6 @@
   // Utils
   --color-overlay: rgba(26, 26, 26, 0.48);
 
-
   // ──── Typography ────
   --font-size-h1: clamp(1.75rem, 1.27rem + 2.41vw, 3.4375rem); // 28px → 55px
   --font-weight-h1: 800;
@@ -101,10 +100,10 @@
   --container-max: 1200px;
 
   // ──── Shadows ────
-  --shadow-card-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-card-md: 0 8px 24px rgba(0, 0, 0, 0.06);
-  --shadow-card-lg: 0 14px 47px rgba(0, 0, 0, 0.08);
-  --shadow-card-lg-hover: 0 14px 47px rgba(0, 0, 0, 0.16);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 14px 47px rgba(0, 0, 0, 0.08);
+  --shadow-lg-hover: 0 14px 47px rgba(0, 0, 0, 0.16);
 
   // ──── Transitions ────
   --transition-fast: 120ms;
@@ -114,9 +113,6 @@
   // ──── Focus ring ────
   --focus-ring: 2px solid var(--color-primary);
   --focus-ring-offset: 4px;
-
-  // ──── Carousel ────
-  --carousel-arrow-offset: calc(var(--spacing-xl) + var(--spacing-sm));
 }
 
 *,

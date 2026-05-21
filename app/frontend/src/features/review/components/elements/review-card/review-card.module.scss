@@ -31,6 +31,11 @@
     background-color: var(--surface-card);
   }
 
+  &__play-icon {
+    width: var(--icon-md);
+    height: var(--icon-md);
+  }
+
   &__title {
     overflow: hidden;
     text-overflow: ellipsis;

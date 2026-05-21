@@ -2,12 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
-const IS_SERVER = typeof window === 'undefined'
-
 export function useMediaQuery(query: string, defaultValue = false): boolean {
-    const [matches, setMatches] = useState<boolean>(() =>
-        IS_SERVER ? defaultValue : window.matchMedia(query).matches
-    )
+    const [matches, setMatches] = useState<boolean>(defaultValue)
 
     useEffect(() => {
         const mq = window.matchMedia(query)

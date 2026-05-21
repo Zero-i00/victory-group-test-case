@@ -17,6 +17,17 @@ interface Props extends ComponentProps<'div'> {
 export function ReviewCard({ review, isActive, onClick, className }: Props) {
     return (
         <Card
+            role="button"
+            tabIndex={0}
+            aria-pressed={isActive}
+            aria-label={`Воспроизвести отзыв: ${review.recipient_full_name}, ${review.recipient_city}`}
+            onClick={onClick}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    onClick?.()
+                }
+            }}
             itemScope
             itemProp="itemListElement"
             itemType={SCHEMA.Review}
@@ -28,35 +39,19 @@ export function ReviewCard({ review, isActive, onClick, className }: Props) {
                     {review.recipient_full_name}
                 </span>
             </div>
-            <button
-                type="button"
-                aria-pressed={isActive}
-                aria-label={`Воспроизвести отзыв: ${review.recipient_full_name}, ${review.recipient_city}`}
-                onClick={onClick}
-                style={{
-                    display: 'contents',
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    width: '100%',
-                }}
-            >
-                <Card.Header className={styles['review-card__header']}>
-                    <span className={styles['review-card__icon']} aria-hidden="true">
-                        <Play size={16} />
-                    </span>
-                    <Card.Title variant={'subtitle-2'} itemProp="name" className={styles['review-card__title']}>
-                        {review.recipient_full_name}
-                    </Card.Title>
-                </Card.Header>
-                <Card.Content className={styles['review-card__content']}>
-                    <Typography variant={'caption'} as={'span'} className={styles['review-card__city']}>
-                        {review.recipient_city}
-                    </Typography>
-                </Card.Content>
-            </button>
+            <Card.Header className={styles['review-card__header']}>
+                <span className={styles['review-card__icon']} aria-hidden="true">
+                    <Play aria-hidden="true" className={styles['review-card__play-icon']} />
+                </span>
+                <Card.Title variant={'subtitle-2'} itemProp="name" className={styles['review-card__title']}>
+                    {review.recipient_full_name}
+                </Card.Title>
+            </Card.Header>
+            <Card.Content className={styles['review-card__content']}>
+                <Typography variant={'caption'} as={'span'} className={styles['review-card__city']}>
+                    {review.recipient_city}
+                </Typography>
+            </Card.Content>
         </Card>
     )
 }

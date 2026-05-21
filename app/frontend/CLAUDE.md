@@ -48,6 +48,11 @@ view-source:http://localhost:3000
 - Нет лишних зависимостей. Иконки — только `lucide-react` (tree-shaking).
 - Динамический `import()` для тяжёлых компонентов (карта, видеоплеер).
 
+### Иконки lucide-react
+- Размер задаётся **только** через CSS-переменные `--icon-xs/sm/md/lg/xl` из `globals.scss`, применённые через `className` на иконке и `width/height: var(--icon-*)` в SCSS.
+- **Запрещено:** проп `size={number}`, прибитые `px`-значения в SCSS, рендер `<Icon />` без `className` (даёт неявный дефолт 24 px).
+- Если ни один из пяти токенов не подходит — сначала ввести новый `--icon-*` в `globals.scss`, потом использовать.
+
 ---
 
 ## 3. Доступность (A11y / Accessibility) — Lighthouse Accessibility = 100
@@ -70,7 +75,7 @@ view-source:http://localhost:3000
 - Видимый `focus-visible` на всех интерактивных элементах (`outline: 2px solid var(--color-primary)`).
 - Модалка/дравер при открытии → фокус на первый элемент внутри; при закрытии → фокус возвращается на триггер.
 - `Escape` закрывает модалку/дравер.
-- `tabIndex` — только `-1` для программного фокуса на скрытых элементах; `tabIndex >= 0` не использовать.
+- `tabIndex` — только `-1` для программного фокуса на скрытых элементах; `tabIndex >= 0` не использовать, **кроме** non-native interactive elements с ARIA role (`role="button"`, `role="tab"` и т.п.) — там `tabIndex={0}` обязателен по ARIA spec.
 
 ### Изображения
 - `alt` — обязателен на всех `<img>` / `<Image>`: смысловые — описание, декоративные — `alt=""`.
@@ -186,10 +191,9 @@ border-radius: 14px;
 `--spacing-xs` 4px · `--spacing-sm` 8px · `--spacing-md` 16px · `--spacing-lg` 24px · `--spacing-xl` 48px
 
 ### Shadows, Transitions, Focus
-`--shadow-card-sm` · `--shadow-card-md` · `--shadow-card-lg` · `--shadow-card-lg-hover`
+`--shadow-sm` · `--shadow-md` · `--shadow-lg` · `--shadow-lg-hover`
 `--transition-fast` 120ms · `--transition-base` 180ms · `--transition-slow` 250ms
 `--focus-ring` 2px solid primary · `--focus-ring-offset` 4px
-`--carousel-arrow-offset` calc(spacing-xl + spacing-sm)
 
 ### Border-radius
 `--rounded-xs` 4px · `--rounded-sm` 8px · `--rounded-md` 14px · `--rounded-lg` 24px · `--rounded-xl` 40px · `--rounded-full` 9999px
