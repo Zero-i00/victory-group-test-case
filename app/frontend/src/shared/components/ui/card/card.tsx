@@ -22,9 +22,9 @@ function CardHeader({className, ...props}: CardHeaderProps) {
     return <div data-slot="card-header" className={cn(styles.card__header, className)} {...props} />
 }
 
-function CardTitle({className, variant = 'subtitle-1', ...props}: CardTitleProps) {
+function CardTitle({className, as = 'h3', variant = 'subtitle-1', ...props}: CardTitleProps) {
     return (
-        <Typography data-slot="card-title" variant={variant} className={cn(styles.card__title, className)} {...props} />
+        <Typography data-slot="card-title" as={as} variant={variant} className={cn(styles.card__title, className)} {...props} />
     )
 }
 

@@ -22,7 +22,7 @@ export function Button({
             className={cn(styles.button, styles[`button--${size}`], styles[`button--${variant}`], className)}
             {...rest}
         >
-            {isLoading ? <Loader/> : children}
+            {isLoading ? <Loader className={styles.button__loader}/> : children}
         </button>
     )
 }

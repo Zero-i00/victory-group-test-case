@@ -10,6 +10,7 @@ function InputInner(
     {
         id,
         type,
+        label,
         hint,
         error,
         container,
@@ -25,18 +26,21 @@ function InputInner(
     const errorId = error && id ? `${id}-error` : undefined
     const describedBy = [errorId, hintId].filter(Boolean).join(' ') || undefined
 
-    const label = required ? `${placeholder} *` : placeholder
-
     return (
         <div {...container} className={cn(styles.input__container, container?.className)}>
+            {label && id && (
+                <label htmlFor={id} className={styles.input__label}>
+                    {label}
+                    {required && <span aria-hidden="true"> *</span>}
+                </label>
+            )}
             <div className={cn(styles.input__wrapper, error && styles['input__wrapper--error'])}>
                 <input
                     id={id}
                     ref={ref}
                     type={type}
-                    aria-label={label}
                     required={required}
-                    placeholder={label}
+                    placeholder={placeholder}
                     aria-invalid={!!error}
                     aria-describedby={describedBy}
                     disabled={disabled}

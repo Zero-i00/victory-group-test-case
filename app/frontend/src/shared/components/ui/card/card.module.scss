@@ -8,19 +8,14 @@
 }
 
 .card__header {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-xs);
-  align-items: center;
   padding: var(--card-spacing) var(--card-spacing) 0;
 }
 
-.card__title {
-  font-weight: 500;
-}
-
 .card__description {
-  color: var(--text-secondary);
+  color: var(--color-gray-600);
 }
 
 .card__content {

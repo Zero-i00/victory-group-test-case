@@ -4,13 +4,14 @@
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  border-radius: var(--rounded-sm);
-  font-weight: 500;
+  border-radius: var(--rounded-xl);
+  font-weight: var(--font-weight-subtitle-2);
   overflow: hidden;
   position: relative;
   transition: background-color 0.2s ease-in-out,
   color 0.2s ease-in-out,
-  border-color 0.2s ease-in-out;
+  border-color 0.2s ease-in-out,
+  box-shadow 0.2s ease-in-out;
 }
 
 .button:disabled {
@@ -19,17 +20,27 @@
 }
 
 .button--default {
+  --btn-loader-color: var(--color-white);
+
   color: var(--color-white);
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+  box-shadow: 0 8px 24px 0 var(--color-primary-shadow);
 }
 
 .button--default:hover:not(:disabled) {
   background-color: color-mix(in srgb, var(--color-primary) 85%, black);
   border-color: color-mix(in srgb, var(--color-primary) 85%, black);
+  box-shadow: 0 10px 32px 0 var(--color-primary-shadow);
+}
+
+.button--default:active:not(:disabled) {
+  box-shadow: 0 4px 12px 0 var(--color-primary-shadow);
 }
 
 .button--outline {
+  --btn-loader-color: var(--color-primary);
+
   color: var(--color-primary);
   border-color: var(--color-primary);
   background-color: transparent;
@@ -79,4 +90,8 @@
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
   --btn-icon-size: var(--icon-xl);
+}
+
+.button__loader {
+  color: var(--btn-loader-color);
 }

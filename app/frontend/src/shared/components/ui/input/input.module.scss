@@ -4,23 +4,27 @@
   flex-direction: column;
 }
 
+.input__label {
+  display: inline-block;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-body-2);
+  line-height: var(--line-height-body-2);
+  color: var(--color-gray-700);
+}
+
 .input__wrapper {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
   padding: 0 var(--spacing-md);
   border: 1px solid var(--color-gray-400);
-  border-radius: var(--rounded-sm);
+  border-radius: var(--rounded-xl);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-  > input {
-    color: var(--color-gray-800);
-  }
 }
 
 .input__wrapper:focus-within {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px var(--color-primary-shadow);
+  box-shadow: 0 0 0 2px var(--color-primary-shadow);
 }
 
 .input__wrapper--error {
@@ -40,6 +44,7 @@
   padding: var(--spacing-sm) 0;
   font-size: var(--font-size-body-1);
   line-height: var(--line-height-body-1);
+  color: var(--color-gray-800);
 
   &::placeholder {
     color: var(--color-gray-500);
@@ -47,6 +52,7 @@
 
   &:required,
   &:invalid {
+    // нативный invalid отключён — состояние ошибки управляется проп error
     box-shadow: none;
   }
 
@@ -56,11 +62,11 @@
 }
 
 .input__hint {
-  margin: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
   color: var(--color-gray-600);
 }
 
 .input__error {
-  margin: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
   color: var(--color-error);
 }
