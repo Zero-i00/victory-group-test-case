@@ -5,7 +5,6 @@ import { HeaderPhoneCall } from '@/shared/components/layout/header/header-phone-
 import { Logo } from '@/shared/components/ui/logo'
 import { Separator } from '@/shared/components/ui/separator'
 import { Typography } from '@/shared/components/ui/typography'
-import { NAVIGATION_ITEMS } from '@/shared/configs/navigation.config'
 import { PAGE_CONFIG } from '@/shared/configs/page.config'
 import { SECTION_CONFIG } from '@/shared/configs/section.config'
 import { APP_TITLE } from '@/shared/constants/root.constants'
@@ -32,16 +31,6 @@ export function Header({ className, id = SECTION_CONFIG.HEADER_CONTENT, ...rest 
                             стоматологический центр
                         </Typography>
                     </div>
-
-                    <nav aria-label="Основная навигация">
-                        <ul role="list">
-                            {NAVIGATION_ITEMS.map((item) => (
-                                <li key={item.id}>
-                                    <a href={`#${item.id}`}>{item.label}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
 
                     <HeaderLocation className={styles['header__location--desktop']} />
 

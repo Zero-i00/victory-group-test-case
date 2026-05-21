@@ -235,7 +235,7 @@ border-radius: 14px;
 
 | Секция | Файл | Тип | Данные |
 |---|---|---|---|
-| Header | `shared/components/layout/header/` | server | статика + nav |
+| Header | `shared/components/layout/header/` | server | статика |
 | Hero | `features/hero/views/` | server | статика |
 | Product (услуги) | `features/product/views/` | client | `productQuery.list()` |
 | Employee (врачи) | `features/employee/views/` | client | `employeeQuery.list()` |
