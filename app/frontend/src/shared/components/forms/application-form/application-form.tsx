@@ -1,7 +1,7 @@
 'use client'
 
-import cn from 'clsx'
 import {useMutation} from '@tanstack/react-query'
+import cn from 'clsx'
 import type {ComponentProps} from 'react'
 import {useForm} from 'react-hook-form'
 import toast from 'react-hot-toast'
@@ -14,12 +14,11 @@ import type {ApplicationRequest} from '@/shared/types/application.types'
 import styles from './application-form.module.scss'
 
 interface Props extends ComponentProps<'form'> {
-    onSuccess?: () => void
 }
 
 type FormData = ApplicationRequest
 
-export function ApplicationForm({className, onSuccess, ...rest}: Props) {
+export function ApplicationForm({className, ...rest}: Props) {
     const {
         register,
         handleSubmit,
@@ -36,7 +35,6 @@ export function ApplicationForm({className, onSuccess, ...rest}: Props) {
             onSuccess: (response) => {
                 toast.success(`Заявка отправлена. Номер заявки ${response.uuid}`)
                 reset()
-                onSuccess?.()
             },
             onError: () => toast.error('Не удалось отправить заявку!'),
         })
@@ -47,6 +45,7 @@ export function ApplicationForm({className, onSuccess, ...rest}: Props) {
             className={cn(styles['application-form'], className)}
             onSubmit={handleSubmit(submit)}
             noValidate
+            aria-label="Запись на приём в DentistAm"
             {...rest}
         >
             <div className={styles['application-form__fields']}>
@@ -77,7 +76,9 @@ export function ApplicationForm({className, onSuccess, ...rest}: Props) {
             </div>
 
             <div className={styles['application-form__footer']}>
-                <Button type={'submit'} isLoading={isPending}>Записаться</Button>
+                <Button type={'submit'} isLoading={isPending}>
+                    Записаться
+                </Button>
             </div>
         </form>
     )

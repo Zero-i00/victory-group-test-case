@@ -1,4 +1,4 @@
-import type {Advantage} from '@/features/about/types/advantage.types'
+import type { Advantage } from '@/features/about/types/advantage.types'
 
 export const ADVANTAGE_DATA: Advantage[] = [
     {

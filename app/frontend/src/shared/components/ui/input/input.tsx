@@ -1,12 +1,12 @@
 'use client'
 
 import cn from 'clsx'
-import {forwardRef, type Ref} from 'react'
+import {forwardRef, type Ref, useId} from 'react'
 import {Typography} from '@/shared/components/ui/typography'
-import type {InputProps} from './input.props'
 import styles from './input.module.scss'
+import type {InputProps} from './input.props'
 
-function InputInner(
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     {
         id,
         type,
@@ -22,21 +22,24 @@ function InputInner(
     }: InputProps,
     ref: Ref<HTMLInputElement>,
 ) {
-    const hintId = hint && id ? `${id}-hint` : undefined
-    const errorId = error && id ? `${id}-error` : undefined
+    const generatedId = useId()
+    const inputId = id ?? generatedId
+
+    const hintId = hint ? `${inputId}-hint` : undefined
+    const errorId = error ? `${inputId}-error` : undefined
     const describedBy = [errorId, hintId].filter(Boolean).join(' ') || undefined
 
     return (
-        <div {...container} className={cn(styles.input__container, container?.className)}>
-            {label && id && (
-                <label htmlFor={id} className={styles.input__label}>
+        <div data-slot={'input'} className={cn(styles.input__container, container?.className)} {...container}>
+            {label && (
+                <label htmlFor={inputId} className={styles.input__label}>
                     {label}
                     {required && <span aria-hidden="true"> *</span>}
                 </label>
             )}
             <div className={cn(styles.input__wrapper, error && styles['input__wrapper--error'])}>
                 <input
-                    id={id}
+                    id={inputId}
                     ref={ref}
                     type={type}
                     required={required}
@@ -48,11 +51,17 @@ function InputInner(
                     {...rest}
                 />
             </div>
-            {hint && <Typography as="p" variant="caption" id={hintId} className={styles.input__hint}>{hint}</Typography>}
-            {error && <Typography as="p" variant="caption" id={errorId} className={styles.input__error}>{error}</Typography>}
+            {hint && (
+                <Typography as="p" variant="caption" id={hintId} className={styles.input__hint}>
+                    {hint}
+                </Typography>
+            )}
+            {error && (
+                <Typography as="p" variant="caption" id={errorId} className={styles.input__error}>
+                    {error}
+                </Typography>
+            )}
         </div>
     )
-}
-
-export const Input = forwardRef<HTMLInputElement, InputProps>(InputInner)
+})
 Input.displayName = 'Input'

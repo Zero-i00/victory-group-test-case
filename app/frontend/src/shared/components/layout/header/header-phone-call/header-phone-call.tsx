@@ -3,6 +3,7 @@ import {PhoneCall} from 'lucide-react'
 import {Card, type CardProps} from '@/shared/components/ui/card'
 import {Pulse} from '@/shared/components/ui/pulse'
 import {Typography} from '@/shared/components/ui/typography'
+import {CLINIC_WORKING_HOURS} from '@/shared/constants/seo.constants'
 import styles from './header-phone-call.module.scss'
 
 interface Props extends CardProps {
@@ -26,7 +27,7 @@ export function HeaderPhoneCall({className, ...rest}: Props) {
                 <div className={styles['header-phone-call__status']}>
                     <Pulse/>
                     <Typography as="span" variant="body-2" className={styles['header-phone-call__status-text']}>
-                        Звоните в любое время
+                        {CLINIC_WORKING_HOURS}
                     </Typography>
                 </div>
             </div>

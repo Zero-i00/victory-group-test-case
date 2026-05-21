@@ -12,7 +12,7 @@ export function AdvantageCard({ advantage, className, ...rest }: Props) {
     return (
         <Card className={cn(styles['advantage-card'], className)} {...rest}>
             <Card.Header>
-                <Image alt={''} width={60} height={60} src={advantage.icon} />
+                <Image alt={''} aria-hidden="true" width={60} height={60} src={advantage.icon} />
             </Card.Header>
             <Card.Content>
                 <Card.Description>{advantage.text}</Card.Description>

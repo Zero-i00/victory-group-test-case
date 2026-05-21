@@ -3,7 +3,6 @@
   --review-thumbnail-height: 70px;
 
   width: 100%;
-  padding: var(--section-gap) 0;
 
   &__wrapper {
     display: flex;
@@ -44,12 +43,12 @@
 
   &__playlist {
     /* паддинги под абсолютно-позиционированные стрелки карусели */
-    padding-inline: calc(var(--spacing-xl) + var(--spacing-sm));
+    padding-inline: var(--carousel-arrow-offset);
 
     @media (min-width: 1024px) {
       flex-shrink: 0;
       width: var(--review-playlist-width);
-      padding: calc(var(--spacing-xl) + var(--spacing-sm)) 0;
+      padding: var(--carousel-arrow-offset) 0;
     }
   }
 

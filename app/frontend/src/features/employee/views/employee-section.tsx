@@ -9,6 +9,7 @@ import {SectionCaption} from '@/shared/components/elements/section-caption'
 import {Button} from '@/shared/components/ui/button'
 import {Typography} from '@/shared/components/ui/typography'
 import {SECTION_CONFIG} from '@/shared/configs/section.config'
+import {SCHEMA} from '@/shared/constants/schema.constants'
 import styles from './employee-section.module.scss'
 
 export function EmployeeSection({className, id = SECTION_CONFIG.EMPLOYEE, ...rest}: ComponentProps<'section'>) {
@@ -27,12 +28,14 @@ export function EmployeeSection({className, id = SECTION_CONFIG.EMPLOYEE, ...res
             id={id}
             aria-labelledby={`${id}-title`}
             className={cn(styles['employee-section'], className)}
+            itemScope
+            itemType={SCHEMA.ItemList}
             {...rest}
         >
             <div className={cn(`container`, styles['employee-section__wrapper'])}>
-                <div className={styles['employee-section__header']}>
+                <header className={styles['employee-section__header']}>
                     <div className={styles['employee-section__header-title']}>
-                        <SectionCaption text={'Наши специалисты'}/>
+                        <SectionCaption caption={'Наши специалисты'}/>
                         <Typography variant={'h2'} id={`${id}-title`} className={styles['employee-section__heading']}>
                             <span className="text-accent">Познакомьтесь</span>
                             <br/>с нашими врачами
@@ -43,7 +46,7 @@ export function EmployeeSection({className, id = SECTION_CONFIG.EMPLOYEE, ...res
                         <strong> обладает всеми необходимыми навыками работы с людьми </strong>и обучен, чтобы помочь
                         вам со всеми медицинскими вопросами
                     </Typography>
-                </div>
+                </header>
                 <ul className={styles['employee-section__content']} role="list">
                     {data.map((employee) => (
                         <li key={employee.id} className={styles['employee-section__item']}>

@@ -14,6 +14,11 @@ export interface CarouselProps extends ComponentProps<'div'> {
 
 export type CarouselArrowProps = ComponentProps<'button'>
 
+export interface CarouselItemProps extends ComponentProps<'li'> {
+    index?: number
+    total?: number
+}
+
 export interface CarouselContextValue {
     carouselRef: ReturnType<typeof useEmblaCarousel>[0]
     api: CarouselApi | undefined

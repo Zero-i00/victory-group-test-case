@@ -1,6 +1,6 @@
 import cn from 'clsx'
-import type {TypographyProps, TypographyVariant} from './typography.props'
 import styles from './typography.module.scss'
+import type {TypographyProps, TypographyVariant} from './typography.props'
 
 const TYPOGRAPHY_MAPPED_ELEMENT: Record<TypographyVariant, keyof HTMLElementTagNameMap> = {
     h1: 'h1',
@@ -15,7 +15,11 @@ const TYPOGRAPHY_MAPPED_ELEMENT: Record<TypographyVariant, keyof HTMLElementTagN
 export function Typography({variant, as, children, className, ...rest}: TypographyProps) {
     const Component = as ?? TYPOGRAPHY_MAPPED_ELEMENT[variant]
     return (
-        <Component className={cn(styles.typography, styles[`typography--${variant}`], className)} {...rest}>
+        <Component
+            data-slot={'typography'}
+            className={cn(styles.typography, styles[`typography--${variant}`], className)}
+            {...rest}
+        >
             {children}
         </Component>
     )

@@ -1,13 +1,12 @@
 .header {
   top: 0;
-  opacity: 0.95;
   position: sticky;
   z-index: var(--z-sticky);
   background-color: var(--color-white);
-  transition: box-shadow 180ms ease;
+  transition: box-shadow var(--transition-base) ease;
 
   &[data-scrolled='true'] {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-card-md);
   }
 
   &__inner {
@@ -29,7 +28,8 @@
   }
 
   &__logo-separator {
-    width: 25px;
+    --header-logo-separator-size: 25px;
+    width: var(--header-logo-separator-size);
     transform: rotateZ(90deg);
   }
 
@@ -38,8 +38,8 @@
     align-items: center;
 
     &:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 4px;
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
       border-radius: var(--rounded-sm);
     }
   }

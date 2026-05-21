@@ -2,24 +2,24 @@
 
 import cn from 'clsx'
 import useEmblaCarousel from 'embla-carousel-react'
-import {ChevronDown, ChevronLeft, ChevronRight, ChevronUp} from 'lucide-react'
-import type {ComponentProps} from 'react'
-import {useCallback, useEffect, useState} from 'react'
-import {Button} from '@/shared/components/ui/button'
-import {CarouselContext, useCarousel} from './carousel.context'
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react'
+import type { ComponentProps } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { Button } from '@/shared/components/ui/button'
+import { CarouselContext, useCarousel } from './carousel.context'
 import styles from './carousel.module.scss'
-import type {CarouselArrowProps, CarouselProps} from './carousel.props'
+import type { CarouselArrowProps, CarouselItemProps, CarouselProps } from './carousel.props'
 
 function CarouselRoot({
-                          orientation = 'horizontal',
-                          options,
-                          plugins,
-                          setApi,
-                          className,
-                          children,
-                          ...rest
-                      }: CarouselProps) {
-    const [carouselRef, api] = useEmblaCarousel({...options, axis: orientation === 'horizontal' ? 'x' : 'y'}, plugins)
+    orientation = 'horizontal',
+    options,
+    plugins,
+    setApi,
+    className,
+    children,
+    ...rest
+}: CarouselProps) {
+    const [carouselRef, api] = useEmblaCarousel({ ...options, axis: orientation === 'horizontal' ? 'x' : 'y' }, plugins)
 
     const [canScrollPrev, setCanScrollPrev] = useState(false)
     const [canScrollNext, setCanScrollNext] = useState(false)
@@ -42,7 +42,7 @@ function CarouselRoot({
 
     useEffect(() => {
         if (!api) return
-        api.reInit({axis: orientation === 'horizontal' ? 'x' : 'y'})
+        api.reInit({ axis: orientation === 'horizontal' ? 'x' : 'y' })
     }, [orientation, api])
 
     useEffect(() => {
@@ -51,17 +51,17 @@ function CarouselRoot({
 
     return (
         <CarouselContext.Provider
-            value={{carouselRef, api, orientation, canScrollPrev, canScrollNext, scrollPrev, scrollNext}}
+            value={{ carouselRef, api, orientation, canScrollPrev, canScrollNext, scrollPrev, scrollNext }}
         >
-            <div className={cn(styles.carousel, className)} aria-roledescription="carousel" {...rest}>
+            <div role="region" className={cn(styles.carousel, className)} aria-roledescription="carousel" {...rest}>
                 {children}
             </div>
         </CarouselContext.Provider>
     )
 }
 
-function CarouselContent({className, ...rest}: ComponentProps<'ul'>) {
-    const {carouselRef, orientation} = useCarousel()
+function CarouselContent({ className, ...rest }: ComponentProps<'ul'>) {
+    const { carouselRef, orientation } = useCarousel()
     return (
         <div ref={carouselRef} className={styles.carousel__viewport}>
             <ul
@@ -73,20 +73,21 @@ function CarouselContent({className, ...rest}: ComponentProps<'ul'>) {
     )
 }
 
-function CarouselItem({className, ...rest}: ComponentProps<'li'>) {
-    const {orientation} = useCarousel()
+function CarouselItem({ className, index, total, ...rest }: CarouselItemProps) {
+    const slideLabel = index !== undefined && total !== undefined ? `Слайд ${index + 1} из ${total}` : undefined
     return (
         <li
             role="group"
             aria-roledescription="slide"
-            className={cn(styles.carousel__item, styles[`carousel__item--${orientation}`], className)}
+            aria-label={slideLabel}
+            className={cn(styles.carousel__item, className)}
             {...rest}
         />
     )
 }
 
-function CarouselPrev({className, ...rest}: CarouselArrowProps) {
-    const {scrollPrev, canScrollPrev, orientation} = useCarousel()
+function CarouselPrev({ className, ...rest }: CarouselArrowProps) {
+    const { scrollPrev, canScrollPrev, orientation } = useCarousel()
     const isVertical = orientation === 'vertical'
     const Icon = isVertical ? ChevronUp : ChevronLeft
     return (
@@ -104,8 +105,8 @@ function CarouselPrev({className, ...rest}: CarouselArrowProps) {
     )
 }
 
-function CarouselNext({className, ...rest}: CarouselArrowProps) {
-    const {scrollNext, canScrollNext, orientation} = useCarousel()
+function CarouselNext({ className, ...rest }: CarouselArrowProps) {
+    const { scrollNext, canScrollNext, orientation } = useCarousel()
     const isVertical = orientation === 'vertical'
     const Icon = isVertical ? ChevronDown : ChevronRight
     return (

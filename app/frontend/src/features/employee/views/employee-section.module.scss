@@ -23,7 +23,7 @@
   }
 
   &__header-title {
-    --header-title-gap: 20px;
+    --header-title-gap: var(--spacing-md);
     flex-shrink: 0;
     display: flex;
     flex-direction: column;

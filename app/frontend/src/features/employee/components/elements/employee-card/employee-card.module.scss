@@ -34,7 +34,7 @@
   }
 
   &__staff {
-    --staff-bottom-gap: 10px;
+    --staff-bottom-gap: var(--spacing-sm);
     margin-bottom: var(--staff-bottom-gap);
     color: var(--color-primary);
   }

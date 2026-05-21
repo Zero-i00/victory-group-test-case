@@ -1,6 +1,6 @@
 
 .section-caption {
-  --section-caption-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --section-caption-shadow: var(--shadow-card-sm);
 
   width: fit-content;
   border-radius: var(--rounded-xl);

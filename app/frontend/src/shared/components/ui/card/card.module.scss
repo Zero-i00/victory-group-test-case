@@ -6,27 +6,27 @@
   border-radius: var(--rounded-md);
   background-color: var(--surface-card);
   overflow: hidden;
-}
 
-.card__header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-  padding: var(--card-spacing) var(--card-spacing) 0;
-}
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--card-spacing) var(--card-spacing) 0;
+  }
 
-.card__description {
-  color: var(--color-gray-600);
-}
+  &__description {
+    color: var(--color-gray-600);
+  }
 
-.card__content {
-  padding: var(--card-spacing);
-  flex: 1;
-}
+  &__content {
+    padding: var(--card-spacing);
+    flex: 1;
+  }
 
-.card__footer {
-  gap: var(--spacing-sm);
-  display: flex;
-  align-items: center;
-  padding: var(--card-spacing);
+  &__footer {
+    gap: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    padding: var(--card-spacing);
+  }
 }

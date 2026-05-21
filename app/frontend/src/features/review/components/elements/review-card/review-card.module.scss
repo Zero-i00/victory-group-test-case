@@ -1,11 +1,11 @@
 .review-card {
-  --card-transition: 120ms;
+  --card-transition: var(--transition-fast);
 
   border: 1px solid transparent;
   transition: border-color var(--card-transition) ease;
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: var(--focus-ring);
     outline-offset: 2px;
   }
 
@@ -24,8 +24,8 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: var(--spacing-lg);
-    height: var(--spacing-lg);
+    width: var(--icon-lg);
+    height: var(--icon-lg);
     border-radius: var(--rounded-full);
     color: var(--color-primary);
     background-color: var(--surface-card);

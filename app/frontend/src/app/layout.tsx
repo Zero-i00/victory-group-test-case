@@ -12,6 +12,7 @@ const manrope = Manrope({
     subsets: ['latin', 'cyrillic'],
     display: 'swap',
 })
+
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
     alternates: {canonical: '/'},

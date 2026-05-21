@@ -16,6 +16,7 @@ export function Button({
     return (
         <button
             type={type}
+            data-slot={'button'}
             aria-busy={isLoading}
             disabled={disabled || isLoading}
             aria-disabled={disabled || isLoading}

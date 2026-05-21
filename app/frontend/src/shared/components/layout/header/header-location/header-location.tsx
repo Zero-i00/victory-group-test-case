@@ -6,23 +6,22 @@ import {CLINIC_ADDRESS, CLINIC_MAPS_URL} from '@/shared/constants/seo.constants'
 import styles from './header-location.module.scss'
 
 interface Props extends ComponentProps<'address'> {
-    compact?: boolean
 }
 
-export function HeaderLocation({className, compact: _compact, ...rest}: Props) {
+export function HeaderLocation({className, ...rest}: Props) {
     return (
-        <address className={cn(styles['header-address'], className)} {...rest}>
+        <address className={cn(styles['header-location'], className)} {...rest}>
             <a
                 href={CLINIC_MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles['header-address__link']}
+                className={styles['header-location__link']}
                 aria-label={`Открыть адрес клиники на карте: ${CLINIC_ADDRESS}`}
             >
-                <div className={styles['header-address__map-container']}>
-                    <Image fill alt="" src={'/images/header/map.webp'} className={styles['header-address__map']}/>
+                <div className={styles['header-location__map-container']}>
+                    <Image fill alt="" aria-hidden="true" src={'/images/header/map.webp'} className={styles['header-location__map']}/>
                 </div>
-                <div className={styles['header-address__content']}>
+                <div className={styles['header-location__content']}>
                     <Typography variant={'subtitle-1'}>г. Москва</Typography>
                     <Typography variant={'body-1'}>ул. Перерва д. 39</Typography>
                 </div>

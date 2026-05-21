@@ -21,7 +21,7 @@
 
   /* паддинги под абсолютно-позиционированные стрелки Carousel */
   &__carousel-container {
-    padding: var(--spacing-xs) calc(var(--spacing-xl) + var(--spacing-sm));
+    padding: var(--spacing-xs) var(--carousel-arrow-offset);
   }
 
   &__carousel {
@@ -43,6 +43,7 @@
 
   /* видимость стрелок: по умолчанию их скрывает сам Carousel */
   &__arrow {
+    --btn-icon-size: 50px;
     display: none;
 
     @media (min-width: 768px) {

@@ -42,15 +42,15 @@
         font-size: var(--font-size-subtitle-2);
         font-weight: var(--font-weight-subtitle-2);
         line-height: var(--line-height-subtitle-2);
-        transition: opacity 0.2s ease;
+        transition: opacity var(--transition-base) ease;
 
         &:hover {
             opacity: 0.85;
         }
 
         &:focus-visible {
-            outline: 2px solid var(--color-primary);
-            outline-offset: 4px;
+            outline: var(--focus-ring);
+            outline-offset: var(--focus-ring-offset);
         }
     }
 }

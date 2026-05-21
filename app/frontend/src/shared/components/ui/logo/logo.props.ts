@@ -1,4 +1,3 @@
-import type {ImageProps} from 'next/image'
+import type { ImageProps } from 'next/image'
 
-export interface LogoProps extends Omit<ImageProps, 'src' | 'alt'> {
-}
+export interface LogoProps extends Omit<ImageProps, 'src'> {}

@@ -16,8 +16,9 @@ export function FooterSocialMedia({className, ...rest}: Props) {
                 rel="noopener noreferrer"
                 aria-label="Написать нам в WhatsApp"
                 className={styles['footer-social-media__link']}
+                itemProp="sameAs"
             >
-                <MessageCircle className={styles['footer-social-media__icon']}/>
+                <MessageCircle className={styles['footer-social-media__icon']} aria-hidden="true"/>
                 <Typography variant="body-1">Напиши нам в WhatsApp</Typography>
             </a>
         </div>

@@ -1,27 +1,27 @@
 
-.header-address {
+.header-location {
   &__link {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px;
-    transition: opacity 180ms ease;
+    gap: var(--spacing-sm);
+    transition: opacity var(--transition-base) ease;
 
     &:hover {
       opacity: 0.75;
     }
 
     &:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 4px;
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
       border-radius: var(--rounded-sm);
     }
   }
 
   &__map-container {
     position: relative;
-    width: 48px;
-    height: 48px;
+    width: var(--spacing-xl);
+    height: var(--spacing-xl);
     flex-shrink: 0;
     overflow: hidden;
     border-radius: var(--rounded-full);

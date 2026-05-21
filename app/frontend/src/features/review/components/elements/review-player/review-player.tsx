@@ -2,8 +2,11 @@ import styles from './review-player.module.scss'
 
 export function ReviewPlayer() {
     return (
-        <div className={styles['review-player__empty']} aria-live="polite">
-            Видео недоступно
-        </div>
+        <figure>
+            <figcaption className="sr-only">Видео отзыва пациента</figcaption>
+            <div className={styles['review-player__empty']} role="status">
+                Видео недоступно
+            </div>
+        </figure>
     )
 }

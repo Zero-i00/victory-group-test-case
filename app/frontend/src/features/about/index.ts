@@ -1,1 +1,1 @@
-export {AboutSection} from './views/about-section'
+export { AboutSection } from './views/about-section'

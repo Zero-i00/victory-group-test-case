@@ -13,20 +13,20 @@
   border-radius: var(--rounded-full);
   background-color: var(--pulse-color);
   flex-shrink: 0;
-}
 
-.pulse::before,
-.pulse::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--rounded-full);
-  background-color: var(--pulse-ring-color);
-  animation: pulse-ring var(--pulse-duration) ease-out infinite;
-}
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--rounded-full);
+    background-color: var(--pulse-ring-color);
+    animation: pulse-ring var(--pulse-duration) ease-out infinite;
+  }
 
-.pulse::after {
-  animation-delay: calc(var(--pulse-duration) / 2);
+  &::after {
+    animation-delay: calc(var(--pulse-duration) / 2);
+  }
 }
 
 @keyframes pulse-ring {

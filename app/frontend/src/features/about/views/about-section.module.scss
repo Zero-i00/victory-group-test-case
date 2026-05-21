@@ -37,7 +37,7 @@
   }
 
   &__content {
-    --content-overlap: 20px;
+    --content-overlap: var(--spacing-md);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
@@ -53,6 +53,10 @@
     @media (min-width: 1024px) {
       max-width: 520px;
     }
+  }
+
+  &__header {
+    display: contents;
   }
 
   &__title {

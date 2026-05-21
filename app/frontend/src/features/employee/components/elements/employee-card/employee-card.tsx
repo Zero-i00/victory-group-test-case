@@ -10,6 +10,7 @@ import type {CardProps} from '@/shared/components/ui/card'
 import {Card} from '@/shared/components/ui/card'
 import {Typography} from '@/shared/components/ui/typography'
 import {SERVER_URL} from '@/shared/constants/root.constants'
+import {SCHEMA} from '@/shared/constants/schema.constants'
 import styles from './employee-card.module.scss'
 
 interface Props extends CardProps {
@@ -18,7 +19,14 @@ interface Props extends CardProps {
 
 export function EmployeeCard({employee, className, ...rest}: Props) {
     return (
-        <Card className={cn(styles['employee-card'], className)} {...rest}>
+        <Card
+            className={cn(styles['employee-card'], className)}
+            itemScope
+            itemProp="itemListElement"
+            itemType={SCHEMA.Physician}
+            {...rest}
+        >
+            <meta itemProp="medicalSpecialty" content="Dentistry" />
             <Card.Header>
                 <div className={styles['employee-card__media']}>
                     <Image
@@ -28,15 +36,18 @@ export function EmployeeCard({employee, className, ...rest}: Props) {
                         src={`${SERVER_URL + employee.photo}`}
                         sizes={'(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'}
                         className={styles['employee-card__image']}
+                        itemProp="image"
                     />
                 </div>
             </Card.Header>
             <Card.Content className={styles['employee-card__content']}>
-                <Card.Title className={styles['employee-card__title']}>{employee.full_name}</Card.Title>
-                <Typography variant={'body-1'} className={styles['employee-card__staff']}>
+                <Card.Title className={styles['employee-card__title']} itemProp="name">
+                    {employee.full_name}
+                </Card.Title>
+                <Typography variant={'body-1'} className={styles['employee-card__staff']} itemProp="jobTitle">
                     {employee.staff.title}
                 </Typography>
-                <Card.Description>{employee.description}</Card.Description>
+                <Card.Description itemProp="description">{employee.description}</Card.Description>
             </Card.Content>
             <Card.Footer>
                 <Button
