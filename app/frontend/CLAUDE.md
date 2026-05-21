@@ -185,6 +185,12 @@ border-radius: 14px;
 ### Spacing
 `--spacing-xs` 4px · `--spacing-sm` 8px · `--spacing-md` 16px · `--spacing-lg` 24px · `--spacing-xl` 48px
 
+### Shadows, Transitions, Focus
+`--shadow-card-sm` · `--shadow-card-md` · `--shadow-card-lg` · `--shadow-card-lg-hover`
+`--transition-fast` 120ms · `--transition-base` 180ms · `--transition-slow` 250ms
+`--focus-ring` 2px solid primary · `--focus-ring-offset` 4px
+`--carousel-arrow-offset` calc(spacing-xl + spacing-sm)
+
 ### Border-radius
 `--rounded-xs` 4px · `--rounded-sm` 8px · `--rounded-md` 14px · `--rounded-lg` 24px · `--rounded-xl` 40px · `--rounded-full` 9999px
 
@@ -221,8 +227,7 @@ border-radius: 14px;
 ## Конфиги
 
 - **`SECTION_CONFIG`** (`src/shared/configs/section.config.ts`) — `id`-строки для всех секций: `HERO`, `PRODUCT`, `EMPLOYEE`, `ABOUT`, `REVIEW`, `HEADER_CONTENT`, `MAIN_CONTENT`, `FOOTER_CONTENT`.
-- **`NAVIGATION_ITEMS`** (`src/shared/configs/navigation.config.ts`) — массив `{ label, href }` для навигации.
-- **`applicationModalStore`** (`src/features/application/stores/application-modal.store.ts`) — `useSyncExternalStore`-совместимый стор для открытия модалки заявки.
+- **`applicationModalStore`** (`src/features/application/stores/application-modal.store.ts`) — `useSyncExternalStore`-совместимый стор для открытия модалки заявки — **планируется**.
 
 ---
 
@@ -236,7 +241,6 @@ border-radius: 14px;
 | Employee (врачи) | `features/employee/views/` | client | `employeeQuery.list()` |
 | About | `features/about/views/` | server | статика |
 | Review (отзывы) | `features/review/views/` | client | `reviewQuery.list()` + видео |
-| Location (карта) | `features/location/views/` | server | статика + lazy iframe |
 | Footer | `shared/components/layout/footer/` | server | статика |
 
 ---
