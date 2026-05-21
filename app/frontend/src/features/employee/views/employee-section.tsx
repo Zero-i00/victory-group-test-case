@@ -23,12 +23,17 @@ export function EmployeeSection({className, id = SECTION_CONFIG.EMPLOYEE, ...res
     }
 
     return (
-        <section id={id} className={cn(styles['employee-section'], className)} {...rest}>
+        <section
+            id={id}
+            aria-labelledby={`${id}-title`}
+            className={cn(styles['employee-section'], className)}
+            {...rest}
+        >
             <div className={cn(`container`, styles['employee-section__wrapper'])}>
                 <div className={styles['employee-section__header']}>
                     <div className={styles['employee-section__header-title']}>
                         <SectionCaption text={'Наши специалисты'}/>
-                        <Typography variant={'h2'} className={styles['employee-section__heading']}>
+                        <Typography variant={'h2'} id={`${id}-title`} className={styles['employee-section__heading']}>
                             <span className="text-accent">Познакомьтесь</span>
                             <br/>с нашими врачами
                         </Typography>
@@ -39,11 +44,13 @@ export function EmployeeSection({className, id = SECTION_CONFIG.EMPLOYEE, ...res
                         вам со всеми медицинскими вопросами
                     </Typography>
                 </div>
-                <div className={styles['employee-section__content']}>
+                <ul className={styles['employee-section__content']} role="list">
                     {data.map((employee) => (
-                        <EmployeeCard key={employee.id} employee={employee}/>
+                        <li key={employee.id} className={styles['employee-section__item']}>
+                            <EmployeeCard employee={employee}/>
+                        </li>
                     ))}
-                </div>
+                </ul>
                 <div className={styles['employee-section__footer']}>
                     {hasNextPage && (
                         <Button size={'xl'} onClick={handleLoadMore} isLoading={isFetchingNextPage}>

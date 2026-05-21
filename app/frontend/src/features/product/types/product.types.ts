@@ -4,7 +4,7 @@ export type Product = {
     id: number
     title: string
     description: string
-    image: string | null
+    image: string
     is_active: boolean
 }
 

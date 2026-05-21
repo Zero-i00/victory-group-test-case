@@ -94,6 +94,8 @@ component-name/
 ```
 
 ### БЭМ-нейминг
+
+Нейминг классов:
 ```scss
 .block { }
 .block__element { }
@@ -101,7 +103,28 @@ component-name/
 .block--modifier { }
 .block__element--modifier { }
 ```
-Вложенность в SCSS — максимум 2 уровня. Псевдоэлементы (`::before`, `::after`) и псевдоклассы (`:hover`, `:focus-visible`) — допустимы внутри блока.
+
+Структура в SCSS — элементы вложены в блок через `&__`:
+```scss
+.block {
+  color: var(--color-primary);
+
+  &__element {
+    gap: var(--spacing-sm);
+
+    &:hover { opacity: 0.85; }
+    &:focus-visible { outline: 2px solid var(--color-primary); }
+  }
+
+  &__element--modifier { opacity: 0.5; }
+}
+```
+
+**Запрещено:**
+- `block__element__sub` — двойной `__`. BEM не поддерживает многоуровневые элементы; использовать `block__sub`.
+- Голые HTML-селекторы внутри BEM-класса (`img { }`, `p { }`, `span { }`). Давать BEM-класс напрямую через `className`.
+
+Вложенность в SCSS — максимум 2 уровня (`&__element { &:hover { } }`). Псевдоэлементы (`::before`, `::after`) и псевдоклассы (`:hover`, `:focus-visible`) — допустимы внутри элемента.
 
 ### Применение классов в TSX
 ```tsx
@@ -129,14 +152,13 @@ border-radius: 14px;
 
 ### Адаптив — Mobile First
 ```scss
-/* mobile — базовый */
-.block { display: grid; grid-template-columns: 1fr; }
+.block {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile — базовый */
 
-/* tablet */
-@media (min-width: 768px) { .block { grid-template-columns: repeat(2, 1fr); } }
-
-/* desktop */
-@media (min-width: 1024px) { .block { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 768px) { grid-template-columns: repeat(2, 1fr); }  /* tablet */
+  @media (min-width: 1024px) { grid-template-columns: repeat(3, 1fr); } /* desktop */
+}
 ```
 
 ### Утилитарные классы (из `globals.scss`)
@@ -242,7 +264,10 @@ A11y
 SCSS + БЭМ
   [ ] Только CSS-переменные, ни одного хардкод-значения
   [ ] БЭМ: block / block__element / block--modifier
-  [ ] Mobile-first: базовые стили для mobile, @media min-width для больших экранов
+  [ ] Элементы вложены через &__ внутри блока, не плоские отдельные классы
+  [ ] Нет двойного __: block__el__sub → запрещено, использовать block__sub
+  [ ] Нет голых HTML-селекторов (img, p, span) внутри BEM-класса
+  [ ] Mobile-first: @media min-width вложены внутрь класса
   [ ] Файлы: component.tsx / component.props.ts / component.module.scss / index.ts
 
 Адаптив

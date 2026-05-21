@@ -1,0 +1,136 @@
+[     820ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[    1061ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  154015ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  154592ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=q3mOO9BClNZHexY7:0
+[  154597ms] [ERROR] ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  154740ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  154747ms] [ERROR] ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  154747ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=q3mOO9BClNZHexY7:0
+[  154798ms] [ERROR] ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[  154802ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  155460ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0bruynb._.js:15305
+[  155466ms] Error: ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at getCompilationErrors (file:///app/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:63)
+    at getCompilationError (file:///app/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at getCompilationError (file:///app/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at findPageComponents (file:///app/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async renderErrorToResponseImpl (file:///app/node_modules/next/dist/server/base-server.js:1753:37)
+    at processTicksAndRejections (unknown:7:39)
+[  155502ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  155600ms] [ERROR] ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  155600ms] [ERROR] ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  155600ms] [ERROR] ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  156278ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  156431ms] [ERROR] ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  156890ms] [ERROR] ./src/app/not-found.tsx:4:1
+Module not found: Can't resolve './not-found.module.scss'
+  2 | import {Card} from '@/shared/components/ui/card'
+  3 | import {Typography} from '@/shared/components/ui/typography'
+> 4 | import styles from './not-found.module.scss'
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function NotFound() {
+  7 |     return (
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1945
+[  156947ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  160742ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  160913ms] [LOG] [Fast Refresh] done in 46ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  161238ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  161297ms] [LOG] [Fast Refresh] done in 158ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_0u_w_5s._.js:1226
+[  163346ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  163515ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  167191ms] [WARNING] The resource http://localhost:3000/_next/static/chunks/src_app_not-found_module_scss_module_0u55y8z.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  172700ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  172725ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  178021ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  178047ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  178602ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  178647ms] [LOG] [Fast Refresh] done in 9ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  181841ms] [WARNING] The resource http://localhost:3000/_next/static/chunks/src_app_not-found_module_scss_module_0u55y8z.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  383284ms] [WARNING] The resource http://localhost:3000/_next/static/chunks/src_app_not-found_module_scss_module_0u55y8z.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  386932ms] [WARNING] The resource http://localhost:3000/_next/static/chunks/src_app_not-found_module_scss_module_0u55y8z.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0

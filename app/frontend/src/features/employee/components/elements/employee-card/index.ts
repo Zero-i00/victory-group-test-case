@@ -1,1 +1,1 @@
-export {EmployeeCard} from './employee-card'
+export { EmployeeCard } from './employee-card'

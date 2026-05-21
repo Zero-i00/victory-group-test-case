@@ -9,11 +9,11 @@ import styles from './hero-section.module.scss'
 
 export function HeroSection({id = SECTION_CONFIG.HERO, ...rest}: ComponentProps<'section'>) {
     return (
-        <section id={id} className={styles.section} {...rest}>
+        <section id={id} className={styles['hero-section']} {...rest}>
             <div className="container">
 
                 {/* ─── Typography ─── */}
-                <div className={styles.group}>
+                <div className={styles['hero-section__group']}>
                     <Typography variant="h1">Heading h1 — Современная стоматология</Typography>
                     <Typography variant="h2">Heading h2 — Профессиональная помощь</Typography>
                     <Typography variant="subtitle-1">Subtitle 1 — Опытные специалисты с заботой о здоровье</Typography>
@@ -24,15 +24,15 @@ export function HeroSection({id = SECTION_CONFIG.HERO, ...rest}: ComponentProps<
                 </div>
 
                 {/* ─── Button ─── */}
-                <div className={styles.group}>
+                <div className={styles['hero-section__group']}>
                     <Typography variant="subtitle-1" as="h3">Button</Typography>
-                    <div className={styles.row}>
+                    <div className={styles['hero-section__row']}>
                         <Button variant="default" size="sm">Default sm</Button>
                         <Button variant="default" size="md">Default md</Button>
                         <Button variant="default" size="lg">Default lg</Button>
                         <Button variant="default" size="xl">Default xl</Button>
                     </div>
-                    <div className={styles.row}>
+                    <div className={styles['hero-section__row']}>
                         <Button variant="outline" size="md">Outline</Button>
                         <Button variant="icon" size="md">🦷</Button>
                         <Button variant="default" size="md" disabled>Disabled</Button>
@@ -41,9 +41,9 @@ export function HeroSection({id = SECTION_CONFIG.HERO, ...rest}: ComponentProps<
                 </div>
 
                 {/* ─── Input ─── */}
-                <div className={styles.group}>
+                <div className={styles['hero-section__group']}>
                     <Typography variant="subtitle-1" as="h3">Input</Typography>
-                    <div className={styles.inputGrid}>
+                    <div className={styles['hero-section__input-grid']}>
                         <Input id="name" placeholder="Ваше имя" />
                         <Input id="phone" type="tel" placeholder="Телефон" required />
                         <Input id="hint-ex" placeholder="С подсказкой" hint="Мы не передаём данные третьим лицам" />
@@ -53,9 +53,9 @@ export function HeroSection({id = SECTION_CONFIG.HERO, ...rest}: ComponentProps<
                 </div>
 
                 {/* ─── Loader ─── */}
-                <div className={styles.group}>
+                <div className={styles['hero-section__group']}>
                     <Typography variant="subtitle-1" as="h3">Loader</Typography>
-                    <div className={styles.row}>
+                    <div className={styles['hero-section__row']}>
                         <Loader />
                         <Loader />
                         <Loader />
@@ -63,9 +63,9 @@ export function HeroSection({id = SECTION_CONFIG.HERO, ...rest}: ComponentProps<
                 </div>
 
                 {/* ─── Card ─── */}
-                <div className={styles.group}>
+                <div className={styles['hero-section__group']}>
                     <Typography variant="subtitle-1" as="h3">Card</Typography>
-                    <div className={styles.cardGrid}>
+                    <div className={styles['hero-section__card-grid']}>
                         <Card>
                             <Card.Header>
                                 <Card.Title variant="subtitle-1">Терапия</Card.Title>

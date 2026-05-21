@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend — DentistAm
 
-## Getting Started
+Фронтенд одностраничного лендинга стоматологической клиники на **Next.js 16 (App Router)**.
 
-First, run the development server:
+## Стек
+
+| Инструмент | Версия | Назначение |
+|---|---|---|
+| Next.js | 16 | SSR, роутинг, оптимизация изображений |
+| React | 19 | UI |
+| TypeScript | 6 | Типизация |
+| TanStack Query | 5 | Серверный prefetch + клиентская инфинити-пагинация |
+| SCSS Modules + BEM | — | Стилизация |
+| Biome | 2 | Линтинг и форматирование |
+| Bun | — | Пакетный менеджер и рантайм |
+
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Для запуска в Docker (биндинг на 0.0.0.0):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+bun docker:dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Сборка и продакшн
 
-## Learn More
+```bash
+bun build
+bun start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Линтинг и форматирование
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+bun lint      # biome check
+bun format    # biome format --write
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Структура `src/`
 
-## Deploy on Vercel
+```
+src/
+├── app/                    # App Router: layout, page, metadata
+├── features/               # Секции лендинга (feature-sliced)
+│   ├── hero/
+│   ├── product/            # Услуги клиники
+│   ├── employee/           # Врачи
+│   ├── about/              # О клинике
+│   └── review/             # Видеоотзывы
+└── shared/
+    ├── api/                # Axios-инстанс
+    ├── components/
+    │   ├── ui/             # UI-кит: Button, Input, Card, Typography…
+    │   ├── elements/       # Переиспользуемые блоки: PhoneCallCard…
+    │   └── layout/         # Header, Footer
+    ├── configs/            # SECTION_CONFIG, NAVIGATION_ITEMS
+    ├── providers/          # QueryClientProvider + HydrationBoundary
+    └── types/              # Общие типы (Pagination и др.)
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Подробные правила разработки — в [CLAUDE.md](./CLAUDE.md).  
+Обоснование выбора Next.js — в [EXPLAIN.md](./EXPLAIN.md).
