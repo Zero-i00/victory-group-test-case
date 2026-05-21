@@ -29,13 +29,7 @@ export function EmployeeSection({className, id = SECTION_CONFIG.EMPLOYEE, ...res
                     <div className={styles['employee-section__header-title']}>
                         <SectionCaption text={'Наши специалисты'}/>
                         <Typography variant={'h2'} className={styles['employee-section__heading']}>
-                            <Typography
-                                variant={'h2'}
-                                as={'span'}
-                                className={styles['employee-section__heading-accent']}
-                            >
-                                Познакомьтесь
-                            </Typography>
+                            <span className="text-accent">Познакомьтесь</span>
                             <br/>с нашими врачами
                         </Typography>
                     </div>
