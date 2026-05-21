@@ -17,22 +17,24 @@ export function Footer() {
             <div className="container">
                 <h2 className="sr-only">Контакты</h2>
                 <div className={styles['footer__grid']}>
-                    <address className={styles['footer__contacts']}>
-                        <div className={styles['footer__contact-item']}>
-                            <MapPin size={20} aria-hidden="true" className={styles['footer__icon']} />
-                            <span>{CLINIC_ADDRESS}</span>
-                        </div>
-                        <div className={styles['footer__contact-item']}>
-                            <Phone size={20} aria-hidden="true" className={styles['footer__icon']} />
-                            <a href={`tel:${CLINIC_PHONE_TEL}`} className={styles['footer__link']}>
-                                {CLINIC_PHONE}
-                            </a>
-                        </div>
+                    <div className={styles['footer__contacts']}>
+                        <address className={styles['footer__address']}>
+                            <div className={styles['footer__contact-item']}>
+                                <MapPin size={20} aria-hidden="true" className={styles['footer__icon']} />
+                                <span>{CLINIC_ADDRESS}</span>
+                            </div>
+                            <div className={styles['footer__contact-item']}>
+                                <Phone size={20} aria-hidden="true" className={styles['footer__icon']} />
+                                <a href={`tel:${CLINIC_PHONE_TEL}`} className={styles['footer__link']}>
+                                    {CLINIC_PHONE}
+                                </a>
+                            </div>
+                        </address>
                         <nav className={styles['footer__nav']} aria-label="Дополнительные ссылки">
                             <a href="#" className={styles['footer__link']}>Полезные статьи</a>
                             <a href="#" className={styles['footer__link']}>Правовая информация</a>
                         </nav>
-                    </address>
+                    </div>
                     <div className={styles['footer__right']}>
                         <div className={styles['footer__contact-item']}>
                             <MessageCircle size={20} aria-hidden="true" className={styles['footer__icon']} />

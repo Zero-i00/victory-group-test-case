@@ -1,8 +1,6 @@
 import {
     CLINIC_ADDRESS,
     CLINIC_GEO,
-    CLINIC_HOURS_WEEKDAYS,
-    CLINIC_HOURS_WEEKEND,
     CLINIC_PHONE_TEL,
     CLINIC_NAME,
     SEO_DESCRIPTION,
@@ -56,7 +54,6 @@ export function organizationSchema() {
         name: CLINIC_NAME,
         url: SITE_URL,
         logo: `${SITE_URL}/icon`,
-        sameAs: [] as string[],
     }
 }
 
