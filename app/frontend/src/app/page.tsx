@@ -15,7 +15,7 @@ export default async function Home() {
 
     await Promise.all([
         queryClient.prefetchInfiniteQuery(productQuery.list()),
-        queryClient.prefetchInfiniteQuery(employeeQuery.list()),
+        queryClient.prefetchInfiniteQuery(employeeQuery.list({page: 1, per_page: 3})),
         queryClient.prefetchInfiniteQuery(reviewQuery.list()),
     ])
 

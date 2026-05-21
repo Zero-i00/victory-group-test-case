@@ -1,0 +1,13 @@
+
+.section-caption {
+  --section-caption-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  width: fit-content;
+  border-radius: var(--rounded-xl);
+  padding: 0 var(--spacing-md);
+  box-shadow: var(--section-caption-shadow);
+}
+
+.section-caption__text {
+  color: var(--color-primary);
+}

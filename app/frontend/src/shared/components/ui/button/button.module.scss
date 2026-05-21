@@ -46,10 +46,6 @@
   background-color: transparent;
 }
 
-.button--outline:hover:not(:disabled) {
-  background-color: var(--color-primary-shadow);
-}
-
 .button--icon {
   padding: 0;
   color: var(--color-primary);
@@ -66,28 +62,24 @@
 
 .button--sm {
   padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: var(--font-size-body-2);
   line-height: var(--line-height-body-2);
   --btn-icon-size: var(--icon-sm);
 }
 
 .button--md {
   padding: var(--spacing-xs) var(--spacing-md);
-  font-size: var(--font-size-body-1);
   line-height: var(--line-height-body-1);
   --btn-icon-size: var(--icon-md);
 }
 
 .button--lg {
   padding: var(--spacing-xs) var(--spacing-lg);
-  font-size: var(--font-size-subtitle-1);
   line-height: var(--line-height-subtitle-1);
   --btn-icon-size: var(--icon-lg);
 }
 
 .button--xl {
   padding: var(--spacing-sm) var(--spacing-lg);
-  font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
   --btn-icon-size: var(--icon-xl);
 }
