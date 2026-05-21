@@ -2,17 +2,26 @@
 
 import {useSuspenseInfiniteQuery} from '@tanstack/react-query'
 import cn from 'clsx'
+import dynamic from 'next/dynamic'
 import type {ComponentProps, CSSProperties, KeyboardEvent} from 'react'
 import {useState} from 'react'
 import {ReviewCard} from '@/features/review/components/elements/review-card'
-import {ReviewPlayer} from '@/features/review/components/elements/review-player'
 import {reviewQuery} from '@/features/review/queries/review.query'
 import {SectionCaption} from '@/shared/components/elements/section-caption'
 import {Carousel} from '@/shared/components/ui/carousel'
+import {Loader} from '@/shared/components/ui/loader'
 import {Typography} from '@/shared/components/ui/typography'
 import {SECTION_CONFIG} from '@/shared/configs/section.config'
 import {useMediaQuery} from '@/shared/hooks/use-media-query'
 import styles from './review-section.module.scss'
+
+const ReviewPlayer = dynamic(
+    () => import('../components/elements/review-player/review-player').then(m => m.ReviewPlayer),
+    {
+        ssr: false,
+        loading: () => <Loader />,
+    }
+)
 
 export function ReviewSection({className, id = SECTION_CONFIG.REVIEW, ...rest}: ComponentProps<'section'>) {
     const {data} = useSuspenseInfiniteQuery(reviewQuery.list())

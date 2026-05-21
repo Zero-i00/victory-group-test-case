@@ -20,7 +20,7 @@ export function ReviewPlayer({ review }: Props) {
             key={review.id}
             className={styles['review-player__video']}
             controls
-            preload="metadata"
+            preload="none"
             playsInline
             aria-label={`Видеоотзыв: ${review.recipient_full_name}, ${review.recipient_city}`}
         >
