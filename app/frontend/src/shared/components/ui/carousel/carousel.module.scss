@@ -1,0 +1,70 @@
+.carousel {
+  --carousel-gap: var(--spacing-md);
+
+  position: relative;
+  width: 100%;
+
+  &__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__track {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--carousel-gap);
+
+    &--horizontal {
+      flex-direction: row;
+    }
+
+    &--vertical {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    min-width: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  &__arrow {
+    position: absolute;
+    z-index: 1;
+    border-radius: var(--rounded-full);
+    background-color: var(--color-white);
+    box-shadow: 0 14px 47px rgba(0, 0, 0, 0.08);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-white);
+      box-shadow: 0 14px 47px rgba(0, 0, 0, 0.16);
+    }
+
+    &--prev-horizontal {
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &--next-horizontal {
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+
+    &--prev-vertical {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--next-vertical {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+  }
+}
