@@ -1,0 +1,36 @@
+.card {
+  --card-spacing: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--rounded-md);
+  background-color: var(--surface-card);
+  overflow: hidden;
+}
+
+.card__header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xs);
+  align-items: center;
+  padding: var(--card-spacing) var(--card-spacing) 0;
+}
+
+.card__title {
+  font-weight: 500;
+}
+
+.card__description {
+  color: var(--text-secondary);
+}
+
+.card__content {
+  padding: var(--card-spacing);
+  flex: 1;
+}
+
+.card__footer {
+  gap: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  padding: var(--card-spacing);
+}
