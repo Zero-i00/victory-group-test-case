@@ -1,11 +1,10 @@
 import cn from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import toast from 'react-hot-toast'
 import type {Product} from '@/features/product/types/product.types'
-import {Button} from '@/shared/components/ui/button'
 import {Card, type CardProps} from '@/shared/components/ui/card'
 import {SERVER_URL} from '@/shared/constants/root.constants'
+import {BookingButton} from '@/shared/components/elements/booking-button'
 import styles from './product-card.module.scss'
 
 interface ProductCardProps extends CardProps {
@@ -18,8 +17,7 @@ export function ProductCard({product, className, ...rest}: ProductCardProps) {
             <Card.Header className={styles['product-card__header']}>
                 <Image
                     fill
-                    unoptimized
-                    alt={product.title}
+                    alt={`Услуга стоматологии: ${product.title}`}
                     src={SERVER_URL + product.image}
                     sizes="(min-width: 1440px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className={styles['product-card__image']}
@@ -32,14 +30,13 @@ export function ProductCard({product, className, ...rest}: ProductCardProps) {
                 </Card.Description>
             </Card.Content>
             <Card.Footer className={styles['product-card__footer']}>
-                <Button
-                    size={'md'}
+                <BookingButton
+                    size={'lg'}
                     className={styles['product-card__application']}
-                    onClick={() => toast.success('Заявка на услугу принята')}
                     aria-label={`Записаться на услугу: ${product.title}`}
                 >
                     Записаться
-                </Button>
+                </BookingButton>
                 <Link
                     href={`/products/${product.id}`}
                     className={styles['product-card__more']}

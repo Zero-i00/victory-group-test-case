@@ -1,7 +1,11 @@
+import type {Metadata} from 'next'
 import Link from 'next/link'
 import {Card} from '@/shared/components/ui/card'
 import {Typography} from '@/shared/components/ui/typography'
+import {NO_INDEX} from '@/shared/constants/seo.constants'
 import styles from './not-found.module.scss'
+
+export const metadata: Metadata = NO_INDEX
 
 export default function NotFound() {
     return (
