@@ -87,7 +87,8 @@ function CarouselItem({className, ...rest}: ComponentProps<'li'>) {
 
 function CarouselPrev({className, ...rest}: CarouselArrowProps) {
     const {scrollPrev, canScrollPrev, orientation} = useCarousel()
-    const Icon = orientation === 'vertical' ? ChevronUp : ChevronLeft
+    const isVertical = orientation === 'vertical'
+    const Icon = isVertical ? ChevronUp : ChevronLeft
     return (
         <Button
             variant="icon"
@@ -98,14 +99,15 @@ function CarouselPrev({className, ...rest}: CarouselArrowProps) {
             className={cn(styles.carousel__arrow, styles[`carousel__arrow--prev-${orientation}`], className)}
             {...rest}
         >
-            <Icon aria-hidden="true"/>
+            <Icon aria-hidden="true" size={isVertical ? 28 : 24} />
         </Button>
     )
 }
 
 function CarouselNext({className, ...rest}: CarouselArrowProps) {
     const {scrollNext, canScrollNext, orientation} = useCarousel()
-    const Icon = orientation === 'vertical' ? ChevronDown : ChevronRight
+    const isVertical = orientation === 'vertical'
+    const Icon = isVertical ? ChevronDown : ChevronRight
     return (
         <Button
             variant="icon"
@@ -116,7 +118,7 @@ function CarouselNext({className, ...rest}: CarouselArrowProps) {
             className={cn(styles.carousel__arrow, styles[`carousel__arrow--next-${orientation}`], className)}
             {...rest}
         >
-            <Icon aria-hidden="true"/>
+            <Icon aria-hidden="true" size={isVertical ? 28 : 24} />
         </Button>
     )
 }

@@ -4,7 +4,7 @@ export type ApplicationRequest = {
 }
 
 export type ApplicationResponse = {
-    id: number
+    uuid: number
     email: string
     full_name: string
 }

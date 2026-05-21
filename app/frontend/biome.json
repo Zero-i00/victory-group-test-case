@@ -33,7 +33,9 @@
       },
       "a11y": {
         "useAriaPropsSupportedByRole": "off",
-        "noRedundantRoles": "off"
+        "noRedundantRoles": "off",
+        "useMediaCaption": "off",
+        "useSemanticElements": "off"
       }
     }
   },

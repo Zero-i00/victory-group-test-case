@@ -1,0 +1,16 @@
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

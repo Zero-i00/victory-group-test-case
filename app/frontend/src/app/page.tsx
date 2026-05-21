@@ -8,8 +8,6 @@ import {ProductSection} from '@/features/product'
 import {productQuery} from '@/features/product/queries/product.query'
 import {ReviewSection} from '@/features/review'
 import {reviewQuery} from '@/features/review/queries/review.query'
-import {JsonLd} from '@/shared/components/seo/json-ld'
-import {dentistSchema, organizationSchema, websiteSchema} from '@/shared/configs/structured-data.config'
 import {getQueryClient} from '@/shared/providers/query'
 
 export default async function Home() {
@@ -23,9 +21,6 @@ export default async function Home() {
 
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
-            <JsonLd data={dentistSchema()} />
-            <JsonLd data={organizationSchema()} />
-            <JsonLd data={websiteSchema()} />
             <Suspense fallback={null}>
                 <HeroSection/>
                 <ProductSection/>

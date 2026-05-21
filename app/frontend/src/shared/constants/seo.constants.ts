@@ -1,19 +1,13 @@
 export const SITE_URL = 'https://dentistam.ru'
 
+export const CLINIC_ADDRESS = 'г. Москва, ул. Перерва, д. 39'
+export const CLINIC_MAPS_URL = 'https://yandex.ru/maps/?text=г.+Москва,+ул.+Перерва,+д.+39'
+export const CLINIC_PHONE = '+7 985 535 76 66'
+export const CLINIC_PHONE_HREF = 'tel:+79855357666'
+export const CLINIC_WHATSAPP_URL = 'https://wa.me/79855357666'
+export const CLINIC_WORKING_HOURS = 'Звоните в любое время'
+
 export const CLINIC_NAME = 'DentistAm — Американский стоматологический центр Дантист'
-
-export const CLINIC_PHONE = '+7 (495) 000-00-00'
-export const CLINIC_PHONE_TEL = '+74950000000'
-
-export const CLINIC_WHATSAPP = 'https://wa.me/74950000000'
-
-export const CLINIC_ADDRESS = 'г. Москва, м. Братиславская, ул. Перерва, д. 39, 2 этаж'
-export const CLINIC_METRO = 'Братиславская'
-
-export const CLINIC_HOURS_WEEKDAYS = 'ПН-ПТ 09:00—21:00'
-export const CLINIC_HOURS_WEEKEND = 'СБ-ВС 10:00—20:00'
-
-export const CLINIC_GEO = { lat: 0, lng: 0 }
 
 export const NO_INDEX = {
     robots: {index: false, follow: false},

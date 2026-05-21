@@ -1,7 +1,7 @@
 .about-section {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(var(--spacing-xl), 8vw, calc(var(--spacing-xl) * 2));
+  padding: var(--section-gap) 0;
 
   &__wrapper {
     display: grid;

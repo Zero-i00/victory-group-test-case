@@ -12,7 +12,7 @@ build/
 .mypy_cache/
 .ruff_cache/
 .python-version
-
+.playwright-mcp
 # uv
 .uv/
 

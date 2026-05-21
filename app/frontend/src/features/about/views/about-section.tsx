@@ -1,5 +1,8 @@
+'use client'
+
 import cn from 'clsx'
 import Image from 'next/image'
+import toast from 'react-hot-toast'
 import type {ComponentProps} from 'react'
 import {AdvantageCard} from '@/features/about/components/elements/advantage-card'
 import {ADVANTAGE_DATA} from '@/features/about/data/advantage.data'
@@ -40,8 +43,8 @@ export function AboutSection({className, id = SECTION_CONFIG.ABOUT, ...rest}: Co
                             </li>
                         ))}
                     </ul>
-                    <Button size={'xl'} className={styles['about-section__application-btn']}>
-                        Записаться на прием
+                    <Button size={'xl'} className={styles['about-section__application-btn']} onClick={() => toast.success('Заявка принята')}>
+                        Записаться на приём
                     </Button>
                 </div>
             </div>

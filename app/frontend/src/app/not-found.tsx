@@ -12,7 +12,7 @@ export default function NotFound() {
         <main className={styles['not-found']}>
             <Card className={styles['not-found__card']}>
                 <Card.Header className={styles['not-found__header']}>
-                    <Typography variant="h1" as="div" className={styles['not-found__code']} aria-hidden="true">
+                    <Typography variant="h1" as="p" className={styles['not-found__code']} aria-hidden="true">
                         404
                     </Typography>
                     <Card.Title as="h1" variant="h2">

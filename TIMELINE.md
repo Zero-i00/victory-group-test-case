@@ -14,3 +14,9 @@
 - 30мин Разметка архитектуры, написание типов и api services/queries
 - 45мин Дизайн-система
 - 60мин ui компоненты
+
+21.05.2025 в 11:00:
+
+- 170мин - Реализация дизайн-системы и базовых ui-компонентов (design tokens, loader, typography, card, button, input, separator, logo, pulse, phone-call-card)
+- 100мин - Секции: employee, about, product
+- В процессе — Hero section, Review section

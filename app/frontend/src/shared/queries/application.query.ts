@@ -5,7 +5,7 @@ import type {ApplicationRequest, ApplicationResponse} from '@/shared/types/appli
 class ApplicationQuery {
     public readonly BASE_KEY = 'application'
 
-    create(): UseMutationOptions<ApplicationRequest, Error, ApplicationResponse> {
+    create(): UseMutationOptions<ApplicationResponse, Error, ApplicationRequest> {
         return {
             mutationKey: [this.BASE_KEY],
             mutationFn: (data) => applicationService.create(data),

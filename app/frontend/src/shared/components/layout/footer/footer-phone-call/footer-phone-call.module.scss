@@ -1,0 +1,47 @@
+.footer-phone-call {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+
+  &__icon {
+    flex-shrink: 0;
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+    color: var(--color-primary);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: var(--spacing-xs);
+  }
+
+  &__link {
+    display: flex;
+    gap: var(--spacing-xs);
+    transition: opacity 180ms ease;
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 4px;
+      border-radius: var(--rounded-xs);
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  &__status-text {
+    color: var(--color-gray-600);
+  }
+}

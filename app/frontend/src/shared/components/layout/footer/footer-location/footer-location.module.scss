@@ -1,0 +1,31 @@
+.footer-location {
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: opacity 180ms ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 4px;
+      border-radius: var(--rounded-sm);
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+    color: var(--color-primary);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+}

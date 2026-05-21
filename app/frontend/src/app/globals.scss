@@ -71,6 +71,9 @@
   --spacing-lg: 24px;
   --spacing-xl: 48px;
 
+  // ──── Section ────
+  --section-gap: var(--spacing-xl);
+
   // ──── Rounded ────
   --rounded-xs: 4px;
   --rounded-sm: 8px;
@@ -148,6 +151,10 @@ ol {
   list-style: none;
 }
 
+address {
+  font-style: normal;
+}
+
 .text-accent {
   color: var(--color-primary);
 }
@@ -172,7 +179,7 @@ ol {
 }
 
 .section-container-y {
-  padding-block: clamp(var(--spacing-lg), 5vw, 3rem);
+  padding: clamp(var(--spacing-lg), 5vw, 3rem) 0;
 }
 
 ::-webkit-scrollbar {
