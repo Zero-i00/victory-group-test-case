@@ -1,0 +1,48 @@
+.review-card {
+  --card-transition: 120ms;
+
+  border: 1px solid transparent;
+  transition: border-color var(--card-transition) ease;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  &--active {
+    border-color: var(--color-primary);
+  }
+
+  &__header {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+    border-radius: var(--rounded-full);
+    color: var(--color-primary);
+    background-color: var(--surface-card);
+  }
+
+  &__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--color-gray-900);
+  }
+
+  &__content {
+    padding-top: 0;
+  }
+
+  &__city {
+    color: var(--color-gray-500);
+  }
+}

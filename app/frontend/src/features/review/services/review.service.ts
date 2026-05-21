@@ -1,5 +1,5 @@
-import type {ReviewRequest, ReviewResponse} from '@/features/review/types/review.types'
-import {axiosClient} from '@/shared/api/api.interceptor'
+import type { ReviewRequest, ReviewResponse } from '@/features/review/types/review.types'
+import { axiosClient } from '@/shared/api/api.interceptor'
 
 class ReviewService {
     public readonly BASE_PATH = '/reviews'

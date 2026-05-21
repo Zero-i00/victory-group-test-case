@@ -1,0 +1,21 @@
+.review-player {
+  &__video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--rounded-md);
+    background-color: var(--color-gray-200);
+    object-fit: cover;
+  }
+
+  &__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--rounded-md);
+    background-color: var(--color-gray-200);
+    color: var(--color-gray-400);
+  }
+}

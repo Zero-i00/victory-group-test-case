@@ -1,4 +1,4 @@
-import type {PaginationRequest, PaginationResponse} from '@/shared/types/api.types'
+import type { PaginationRequest, PaginationResponse } from '@/shared/types/api.types'
 
 export type Review = {
     id: number
