@@ -1,9 +1,6 @@
-'use client'
-
 import cn from 'clsx'
 import Image from 'next/image'
 import type {ComponentProps} from 'react'
-import toast from 'react-hot-toast'
 import {AdvantageCard} from '@/features/about/components/elements/advantage-card'
 import {ADVANTAGE_DATA} from '@/features/about/data/advantage.data'
 import {SectionCaption} from '@/shared/components/elements/section-caption'
@@ -30,6 +27,7 @@ export function AboutSection({className, id = SECTION_CONFIG.ABOUT, ...rest}: Co
                         alt="Улыбающаяся пациентка после визита в стоматологию DentistAm"
                         width={862}
                         height={862}
+                        quality={75}
                         loading="lazy"
                         sizes="(min-width: 1024px) 862px, (min-width: 768px) 400px, 100vw"
                         className={styles['about-section__photo']}
@@ -59,9 +57,10 @@ export function AboutSection({className, id = SECTION_CONFIG.ABOUT, ...rest}: Co
                         ))}
                     </ul>
                     <Button
-                        size={'xl'}
+                        size="xl"
+                        popoverTarget="application-modal"
+                        aria-haspopup="dialog"
                         className={styles['about-section__application-btn']}
-                        onClick={() => toast.success('Заявка принята')}
                     >
                         Записаться на приём
                     </Button>

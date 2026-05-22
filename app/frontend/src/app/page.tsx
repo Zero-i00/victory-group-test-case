@@ -8,7 +8,9 @@ import {ProductSection} from '@/features/product'
 import {productQuery} from '@/features/product/queries/product.query'
 import {ReviewSection} from '@/features/review'
 import {reviewQuery} from '@/features/review/queries/review.query'
+import {ApplicationModal} from '@/shared/components/forms/application-modal'
 import {getQueryClient} from '@/shared/providers/query'
+import {Loader} from '@/shared/components/ui/loader'
 
 export default async function Home() {
     const queryClient = getQueryClient()
@@ -21,13 +23,18 @@ export default async function Home() {
 
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
-            <Suspense fallback={null}>
-                <HeroSection/>
+            <HeroSection/>
+            <Suspense fallback={<Loader/>}>
                 <ProductSection/>
+            </Suspense>
+            <Suspense fallback={<Loader/>}>
                 <EmployeeSection/>
-                <AboutSection/>
+            </Suspense>
+            <AboutSection/>
+            <Suspense fallback={<Loader/>}>
                 <ReviewSection/>
             </Suspense>
+            <ApplicationModal/>
         </HydrationBoundary>
     )
 }
