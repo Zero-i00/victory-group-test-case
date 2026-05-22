@@ -1,0 +1,72 @@
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-body-1);
+  line-height: var(--line-height-body-1);
+  color: var(--color-gray-800);
+
+  &::placeholder {
+    color: var(--color-gray-500);
+  }
+
+  &:required,
+  &:invalid {
+    // нативный invalid отключён — состояние ошибки управляется проп error
+    box-shadow: none;
+  }
+
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  &__container {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-body-2);
+    line-height: var(--line-height-body-2);
+    color: var(--color-gray-700);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0 var(--spacing-md);
+    border: 1px solid var(--color-gray-400);
+    border-radius: var(--rounded-xl);
+    transition: border-color var(--transition-base) ease, box-shadow var(--transition-base) ease;
+
+    &--error {
+      border-color: var(--color-error);
+
+      &:focus-within {
+        border-color: var(--color-error);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-error) 25%, transparent);
+      }
+    }
+
+    &:focus-within {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 2px var(--color-primary-shadow);
+    }
+  }
+
+  &__hint {
+    margin-top: var(--spacing-xs);
+    color: var(--color-gray-600);
+  }
+
+  &__error {
+    margin-top: var(--spacing-xs);
+    color: var(--color-error);
+  }
+}

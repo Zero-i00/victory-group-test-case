@@ -11,8 +11,8 @@ services:
     ports:
       - "${PORT}:${PORT}"
     networks:
-      - app_network
+      - app-network
 
 networks:
-  app_network:
+  app-network:
     driver: bridge

@@ -1,0 +1,119 @@
+.header-mobile-menu {
+  &__trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-xl);
+    height: var(--spacing-xl);
+    background: transparent;
+    color: var(--color-gray-900);
+    border: none;
+    border-radius: var(--rounded-md);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color var(--transition-base) ease;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
+    }
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__icon {
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    background: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-md);
+    overflow-y: auto;
+    animation: header-mobile-menu-in var(--transition-slow) ease both;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-xl);
+    height: var(--spacing-xl);
+    background: transparent;
+    border: none;
+    border-radius: var(--rounded-md);
+    color: var(--color-gray-900);
+    cursor: pointer;
+    transition: background-color var(--transition-base) ease;
+
+    &:hover {
+      background-color: var(--color-gray-100);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
+      border-radius: var(--rounded-sm);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  &__link {
+    font-size: var(--font-size-subtitle-1);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    text-decoration: none;
+    transition: color var(--transition-base) ease;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
+      border-radius: var(--rounded-xs);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+}
+
+@keyframes header-mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

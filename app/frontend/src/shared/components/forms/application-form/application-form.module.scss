@@ -1,0 +1,28 @@
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: stretch;
+
+    @media (min-width: 768px) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: auto;
+    }
+  }
+}

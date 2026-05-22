@@ -1,0 +1,79 @@
+.review-section {
+  --review-playlist-width: 210px;
+  --review-thumbnail-height: 70px;
+
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    padding: var(--section-gap) var(--spacing-lg);
+    border-radius: var(--rounded-xl);
+    background-color: var(--color-gray-100);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  &__heading {
+    color: var(--color-gray-900);
+    text-transform: uppercase;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--spacing-xl);
+    }
+  }
+
+  &__player {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__playlist {
+    padding-inline: 0;
+
+    @media (min-width: 768px) {
+      padding-inline: calc(var(--spacing-xl) + var(--spacing-sm));
+    }
+
+    @media (min-width: 1024px) {
+      flex-shrink: 0;
+      width: var(--review-playlist-width);
+      padding: calc(var(--spacing-xl) + var(--spacing-sm)) 0;
+    }
+  }
+
+  &__carousel {
+    --carousel-gap: var(--spacing-sm);
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  &__slide {
+    flex: 0 0 calc((100% - var(--carousel-gap)) / 2);
+
+    @media (min-width: 1024px) {
+      flex: 0 0 var(--review-thumbnail-height);
+    }
+  }
+
+}

@@ -1,0 +1,18 @@
+.footer-hours {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-md);
+
+  &__icon {
+    flex-shrink: 0;
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+    color: var(--color-primary);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+}

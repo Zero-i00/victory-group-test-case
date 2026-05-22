@@ -1,0 +1,54 @@
+.typography {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: var(--typo-font-size);
+  line-height: var(--typo-line-height);
+  font-weight: var(--typo-font-weight);
+
+  --typo-font-size: var(--font-size-body-1);
+  --typo-line-height: var(--line-height-body-1);
+  --typo-font-weight: var(--font-weight-body-1);
+
+  &--h1 {
+    --typo-font-size: var(--font-size-h1);
+    --typo-line-height: var(--line-height-h1);
+    --typo-font-weight: var(--font-weight-h1);
+  }
+
+  &--h2 {
+    --typo-font-size: var(--font-size-h2);
+    --typo-line-height: var(--line-height-h2);
+    --typo-font-weight: var(--font-weight-h2);
+  }
+
+  &--subtitle-1 {
+    --typo-font-size: var(--font-size-subtitle-1);
+    --typo-line-height: var(--line-height-subtitle-1);
+    --typo-font-weight: var(--font-weight-subtitle-1);
+  }
+
+  &--subtitle-2 {
+    --typo-font-size: var(--font-size-subtitle-2);
+    --typo-line-height: var(--line-height-subtitle-2);
+    --typo-font-weight: var(--font-weight-subtitle-2);
+  }
+
+  &--body-1 {
+    --typo-font-size: var(--font-size-body-1);
+    --typo-line-height: var(--line-height-body-1);
+    --typo-font-weight: var(--font-weight-body-1);
+  }
+
+  &--body-2 {
+    --typo-font-size: var(--font-size-body-2);
+    --typo-line-height: var(--line-height-body-2);
+    --typo-font-weight: var(--font-weight-body-2);
+  }
+
+  &--caption {
+    --typo-font-size: var(--font-size-caption);
+    --typo-line-height: var(--line-height-caption);
+    --typo-font-weight: var(--font-weight-caption);
+  }
+}

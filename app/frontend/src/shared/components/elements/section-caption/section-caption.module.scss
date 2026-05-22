@@ -1,0 +1,11 @@
+
+.section-caption {
+  width: fit-content;
+  border-radius: var(--rounded-xl);
+  padding: 0 var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.section-caption__text {
+  color: var(--color-primary);
+}

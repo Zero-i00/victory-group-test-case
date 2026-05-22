@@ -1,0 +1,78 @@
+.header {
+  top: 0;
+  position: sticky;
+  z-index: var(--z-sticky);
+  background-color: var(--color-white);
+  transition: box-shadow var(--transition-base) ease;
+
+  &[data-scrolled='true'] {
+    box-shadow: var(--shadow-md);
+  }
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+  }
+
+  &__logo-separator {
+    --header-logo-separator-size: 25px;
+    width: var(--header-logo-separator-size);
+    transform: rotateZ(90deg);
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__logo-link {
+    display: inline-flex;
+    align-items: center;
+
+    &:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: var(--focus-ring-offset);
+      border-radius: var(--rounded-sm);
+    }
+  }
+
+  &__clinic-name {
+    display: none;
+    color: var(--color-gray-600);
+
+    @media (min-width: 768px) {
+      display: inline;
+    }
+  }
+
+  &__location--desktop {
+    display: none;
+    flex: 1 1 auto;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+      display: flex;
+    }
+  }
+
+  &__phone--desktop {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: flex;
+    }
+  }
+}

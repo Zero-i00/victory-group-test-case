@@ -1,0 +1,31 @@
+.hero-carousel {
+  --carousel-card-width: 100%;
+  --carousel-next-size: 3.125rem;
+
+  width: 100%;
+  max-width: 100%;
+  overflow: visible !important;
+
+  @media (min-width: 768px) {
+    --carousel-card-width: 17.6875rem;
+    width: calc(var(--carousel-card-width) + var(--carousel-next-size) * 0.5);
+  }
+
+  &__item {
+    flex: 0 0 var(--carousel-card-width);
+    min-width: 0;
+  }
+
+  &__next {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      top: var(--spacing-xl) !important;
+      right: 0 !important;
+      transform: translate(50%, 0) !important;
+      width: var(--carousel-next-size) !important;
+      height: var(--carousel-next-size) !important;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.review-card {
+  --card-transition: var(--transition-fast);
+
+  border: 1px solid transparent;
+  transition: border-color var(--card-transition) ease;
+
+  &:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  &--active {
+    border-color: var(--color-primary);
+  }
+
+  &__header {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    border-radius: var(--rounded-full);
+    color: var(--color-primary);
+    background-color: var(--surface-card);
+  }
+
+  &__play-icon {
+    width: var(--icon-md);
+    height: var(--icon-md);
+  }
+
+  &__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--color-gray-900);
+  }
+
+  &__content {
+    padding-top: 0;
+  }
+
+  &__city {
+    color: var(--color-gray-500);
+  }
+}

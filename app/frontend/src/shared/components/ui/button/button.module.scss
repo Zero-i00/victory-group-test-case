@@ -1,0 +1,88 @@
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--rounded-xl);
+  font-weight: var(--font-weight-subtitle-2);
+  overflow: hidden;
+  position: relative;
+  transition: background-color var(--transition-base) ease-in-out,
+  color var(--transition-base) ease-in-out,
+  border-color var(--transition-base) ease-in-out,
+  box-shadow var(--transition-base) ease-in-out;
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  &--default {
+    --btn-loader-color: var(--color-white);
+
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px 0 var(--color-primary-shadow);
+
+    &:hover:not(:disabled) {
+      background-color: color-mix(in srgb, var(--color-primary) 85%, var(--color-black));
+      border-color: color-mix(in srgb, var(--color-primary) 85%, var(--color-black));
+    }
+
+    &:active:not(:disabled) {
+      box-shadow: 0 4px 12px 0 var(--color-primary-shadow);
+    }
+  }
+
+  &--outline {
+    --btn-loader-color: var(--color-primary);
+
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background-color: transparent;
+  }
+
+  &--icon {
+    padding: 0;
+    color: var(--color-primary);
+    background-color: transparent;
+    border-color: transparent;
+    aspect-ratio: 1;
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-size);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-primary-shadow);
+    }
+  }
+
+  &--sm {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    line-height: var(--line-height-body-2);
+    --btn-icon-size: var(--icon-sm);
+  }
+
+  &--md {
+    padding: var(--spacing-xs) var(--spacing-md);
+    line-height: var(--line-height-body-1);
+    --btn-icon-size: var(--icon-md);
+  }
+
+  &--lg {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    line-height: var(--line-height-subtitle-1);
+    --btn-icon-size: var(--icon-lg);
+  }
+
+  &--xl {
+    padding: var(--spacing-md) var(--spacing-lg);
+    line-height: var(--line-height-h2);
+    --btn-icon-size: var(--icon-xl);
+  }
+
+  &__loader {
+    color: var(--btn-loader-color);
+  }
+}

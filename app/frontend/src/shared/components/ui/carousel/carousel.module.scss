@@ -1,0 +1,62 @@
+.carousel {
+  --carousel-gap: var(--spacing-md);
+
+  position: relative;
+  width: 100%;
+
+  &__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__track {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--carousel-gap);
+  }
+
+  &__item {
+    min-width: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  &__arrow {
+    position: absolute;
+    z-index: 1;
+    border-radius: var(--rounded-full);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-lg);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-white);
+      box-shadow: var(--shadow-lg-hover);
+    }
+  }
+
+  &__icon {
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+  }
+
+  &[data-orientation='vertical'] &__icon {
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+  }
+
+  &[data-orientation='horizontal'] {
+    .carousel__track { flex-direction: row; }
+
+    .carousel__arrow--prev { top: 50%; left: 0;  transform: translate(-50%, -50%); }
+    .carousel__arrow--next { top: 50%; right: 0; transform: translate(50%, -50%); }
+  }
+
+  &[data-orientation='vertical'] {
+    .carousel__track { flex-direction: column; }
+
+    .carousel__arrow--prev { top: 0;    left: 50%; transform: translate(-50%, -50%); }
+    .carousel__arrow--next { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+  }
+}
