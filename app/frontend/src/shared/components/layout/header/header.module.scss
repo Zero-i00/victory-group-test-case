@@ -31,6 +31,11 @@
     --header-logo-separator-size: 25px;
     width: var(--header-logo-separator-size);
     transform: rotateZ(90deg);
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 
   &__logo-link {
@@ -63,25 +68,11 @@
     }
   }
 
-  &__location--mobile {
-    display: flex;
-
-    @media (min-width: 1024px) {
-      display: none;
-    }
-  }
-
   &__phone--desktop {
     display: none;
 
     @media (min-width: 1024px) {
       display: flex;
-    }
-  }
-
-  &__menu {
-    @media (min-width: 1024px) {
-      display: none;
     }
   }
 }

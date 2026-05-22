@@ -31,12 +31,6 @@
       "suspicious": {
         "noArrayIndexKey": "off",
         "noExplicitAny": "off"
-      },
-      "a11y": {
-        "useAriaPropsSupportedByRole": "off",
-        "noRedundantRoles": "off",
-        "useMediaCaption": "off",
-        "useSemanticElements": "off"
       }
     }
   },

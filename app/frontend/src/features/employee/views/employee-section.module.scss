@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
-    padding: var(--section-gap) 0;
+    padding-block: var(--section-gap);
     border-radius: var(--rounded-xl);
     background-color: var(--color-gray-100);
   }
@@ -65,5 +65,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__cta {
+    width: fit-content;
+    padding: var(--spacing-xs) var(--spacing-md);
+    line-height: var(--line-height-body-1);
+    --btn-icon-size: var(--icon-md);
+
+    @media (min-width: 768px) {
+      padding: var(--spacing-md) var(--spacing-lg);
+      line-height: var(--line-height-h2);
+      --btn-icon-size: var(--icon-xl);
+    }
   }
 }

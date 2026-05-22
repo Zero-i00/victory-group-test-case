@@ -35,6 +35,7 @@
   }
 
   &__layout {
+    margin-top: var(--spacing-xl);
     position: relative;
     z-index: 1;
     display: flex;
@@ -110,10 +111,13 @@
 
   &__map-link {
     display: block;
-    margin-bottom: calc(clamp(220px, 44vw, 520px) * -0.38);
+    margin-bottom: 0;
+    margin-top: var(--spacing-xl);
     transition: opacity var(--transition-base) ease;
 
     @media (min-width: 1024px) {
+      margin-top: 0;
+      margin-bottom: calc(clamp(220px, 44vw, 520px) * -0.38);
       grid-area: circle;
     }
 

@@ -1,9 +1,6 @@
-'use client'
-
 import cn from 'clsx'
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
-import toast from 'react-hot-toast'
 import type { Employee } from '@/features/employee/types/employee.types'
 import { Button } from '@/shared/components/ui/button'
 import type { CardProps } from '@/shared/components/ui/card'
@@ -55,7 +52,6 @@ export function EmployeeCard({ employee, className, ...rest }: Props) {
                     variant={'outline'}
                     aria-label={`Подробнее о ${employee.full_name}`}
                     className={styles['employee-card__about']}
-                    onClick={() => toast.success(`Какая-то информация`)}
                 >
                     Подробнее
                     <ChevronRight aria-hidden="true" className={styles['employee-card__chevron']} />

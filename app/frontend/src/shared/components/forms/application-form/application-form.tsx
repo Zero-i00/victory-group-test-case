@@ -1,34 +1,33 @@
 'use client'
 
-import {useMutation} from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import cn from 'clsx'
-import type {ComponentProps} from 'react'
-import {useForm} from 'react-hook-form'
+import type { ComponentProps } from 'react'
+import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
-import {Button} from '@/shared/components/ui/button'
-import {Input} from '@/shared/components/ui/input'
-import {INVALID_EMAIL_PATTERN, REQUIRED_INPUT_ERROR} from '@/shared/constants/error.constants'
-import {EMAIL_PATTERN} from '@/shared/constants/regex.constants'
-import {applicationQuery} from '@/shared/queries/application.query'
-import type {ApplicationRequest} from '@/shared/types/application.types'
+import { Button } from '@/shared/components/ui/button'
+import { Input } from '@/shared/components/ui/input'
+import { INVALID_EMAIL_PATTERN, REQUIRED_INPUT_ERROR } from '@/shared/constants/error.constants'
+import { EMAIL_PATTERN } from '@/shared/constants/regex.constants'
+import { applicationQuery } from '@/shared/queries/application.query'
+import type { ApplicationRequest } from '@/shared/types/application.types'
 import styles from './application-form.module.scss'
 
-interface Props extends ComponentProps<'form'> {
-}
+interface Props extends ComponentProps<'form'> {}
 
 type FormData = ApplicationRequest
 
-export function ApplicationForm({className, ...rest}: Props) {
+export function ApplicationForm({ className, ...rest }: Props) {
     const {
         register,
         handleSubmit,
         reset,
-        formState: {errors},
+        formState: { errors },
     } = useForm<FormData>({
         mode: 'onChange',
     })
 
-    const {mutate, isPending} = useMutation(applicationQuery.create())
+    const { mutate, isPending } = useMutation(applicationQuery.create())
 
     const submit = (data: FormData) => {
         mutate(data, {
@@ -76,7 +75,7 @@ export function ApplicationForm({className, ...rest}: Props) {
             </div>
 
             <div className={styles['application-form__footer']}>
-                <Button type={'submit'} isLoading={isPending}>
+                <Button type={'submit'} isLoading={isPending} className={styles['application-form__submit']}>
                     Записаться
                 </Button>
             </div>

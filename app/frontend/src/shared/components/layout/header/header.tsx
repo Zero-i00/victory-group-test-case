@@ -10,6 +10,7 @@ import { SECTION_CONFIG } from '@/shared/configs/section.config'
 import { APP_TITLE } from '@/shared/constants/root.constants'
 import styles from './header.module.scss'
 import { HeaderLocation } from './header-location'
+import { HeaderMobileMenu } from './header-mobile-menu'
 
 export function Header({ className, id = SECTION_CONFIG.HEADER_CONTENT, ...rest }: ComponentProps<'header'>) {
     return (
@@ -35,6 +36,8 @@ export function Header({ className, id = SECTION_CONFIG.HEADER_CONTENT, ...rest 
                     <HeaderLocation className={styles['header__location--desktop']} />
 
                     <HeaderPhoneCall className={styles['header__phone--desktop']} />
+
+                    <HeaderMobileMenu />
                 </div>
             </div>
         </header>

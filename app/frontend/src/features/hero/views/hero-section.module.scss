@@ -1,34 +1,157 @@
 .hero-section {
-  padding: var(--section-gap) 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-white);
 
-  &__group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    padding: var(--spacing-xl) 0;
-    border-bottom: 1px solid var(--color-gray-300);
+  &__bg {
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.05;
+    pointer-events: none;
+  }
 
-    &:last-child {
-      border-bottom: none;
+  &__decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
     }
   }
 
-  &__row {
+  &__circle-lg {
+    position: absolute;
+    border-radius: var(--rounded-full);
+    width: clamp(22rem, 59.5vw, 70.6875rem);
+    height: clamp(22rem, 59.5vw, 70.6875rem);
+    top: 9.3%;
+    left: 3.9vw;
+    transform: translate(-30%, -30%);
+    background: rgba(255, 255, 255, 0.1);
+    filter: blur(5vw);
+  }
+
+  &__circle-md {
+    position: absolute;
+    border-radius: var(--rounded-full);
+    width: clamp(17rem, 45.4vw, 53.875rem);
+    height: clamp(17rem, 45.4vw, 53.875rem);
+    top: 25%;
+    left: 10.9vw;
+    transform: translate(-20%, -20%);
+    background: rgba(255, 255, 255, 0.2);
+    filter: blur(5vw);
+  }
+
+  &__circle-sm {
+    position: absolute;
+    border-radius: var(--rounded-full);
+    width: clamp(10rem, 29.8vw, 35.375rem);
+    height: clamp(10rem, 29.8vw, 35.375rem);
+    top: 42.5%;
+    left: 18.7vw;
+    transform: translate(-10%, -10%);
+    background: var(--color-white);
+    filter: blur(3vw);
+  }
+
+  &__inner {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding-block: var(--spacing-xl);
+
+    @media (min-width: 1024px) {
+      display: block;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline-start: 34vw;
+      padding-inline-end: var(--spacing-xl);
+    }
   }
 
-  &__input-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: var(--spacing-md);
+  &__left {
+    position: relative;
+    aspect-ratio: 493 / 736;
+    width: 100%;
+    max-width: min(100%, 22rem);
+    margin: 0 auto;
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      left: 12vw;
+      top: 0;
+      bottom: 0;
+      width: 48vw;
+      aspect-ratio: auto;
+      max-width: none;
+      margin: 0;
+      z-index: 0;
+    }
   }
 
-  &__card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: var(--spacing-md);
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    padding-inline: var(--spacing-md);
+
+    @media (min-width: 768px) {
+      padding-inline: var(--spacing-lg);
+    }
+
+    @media (min-width: 1024px) {
+      padding-inline: var(--spacing-xl);
+    }
   }
+}
+
+.hero-headline {
+  --headline-title-max: 41rem;
+  --headline-lead-max: 26.5rem;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+
+  &__title {
+    text-transform: uppercase;
+    color: var(--color-gray-700);
+    max-width: var(--headline-title-max);
+    width: 100%;
+  }
+
+  &__lead {
+    font-size: var(--font-size-subtitle-1);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-gray-700);
+    max-width: var(--headline-lead-max);
+  }
+
+  &__cta {
+    border-radius: var(--rounded-full) !important;
+    padding: var(--spacing-xs) var(--spacing-md) !important;
+    line-height: var(--line-height-body-1);
+    --btn-icon-size: var(--icon-md);
+
+    @media (min-width: 768px) {
+      padding: var(--spacing-lg) var(--spacing-xl) !important;
+      line-height: var(--line-height-h2);
+      --btn-icon-size: var(--icon-xl);
+    }
+  }
+}
+
+.hero-doctor-photo {
+  object-fit: cover;
+  object-position: center top;
 }

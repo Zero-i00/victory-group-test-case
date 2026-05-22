@@ -6,7 +6,7 @@ class ApplicationService {
 
     async create(data: ApplicationRequest) {
         const response = await axiosClient.post<ApplicationResponse>(this.BASE_PATH, {
-            data: data,
+            ...data,
         })
         return response.data
     }

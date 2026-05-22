@@ -29,7 +29,6 @@
     &:hover:not(:disabled) {
       background-color: color-mix(in srgb, var(--color-primary) 85%, var(--color-black));
       border-color: color-mix(in srgb, var(--color-primary) 85%, var(--color-black));
-      box-shadow: 0 10px 32px 0 var(--color-primary-shadow);
     }
 
     &:active:not(:disabled) {

@@ -50,10 +50,14 @@ app/frontend/
     ├── features/
     │   ├── about/
     │   │   ├── [x] index.ts
-    │   │   ├── components/elements/advantage-card/
-    │   │   │   ├── [ ] advantage-card.tsx
-    │   │   │   ├── [ ] advantage-card.module.scss
-    │   │   │   └── [ ] index.ts
+    │   │   ├── components/elements/
+    │   │   │   ├── advantage-card/
+    │   │   │   │   ├── [ ] advantage-card.tsx
+    │   │   │   │   ├── [ ] advantage-card.module.scss
+    │   │   │   │   └── [ ] index.ts
+    │   │   │   └── application-button/
+    │   │   │       ├── [ ] application-button.tsx
+    │   │   │       └── [ ] index.ts
     │   │   ├── data/
     │   │   │   └── [x] advantage.data.ts
     │   │   ├── types/
@@ -64,10 +68,15 @@ app/frontend/
     │   │
     │   ├── employee/
     │   │   ├── [x] index.ts
-    │   │   ├── components/elements/employee-card/
-    │   │   │   ├── [ ] employee-card.tsx
-    │   │   │   ├── [ ] employee-card.module.scss
-    │   │   │   └── [ ] index.ts
+    │   │   ├── components/elements/
+    │   │   │   ├── employee-card/
+    │   │   │   │   ├── [ ] employee-card.tsx
+    │   │   │   │   ├── [ ] employee-card.module.scss
+    │   │   │   │   └── [ ] index.ts
+    │   │   │   └── employee-card-action/
+    │   │   │       ├── [ ] employee-card-action.tsx
+    │   │   │       ├── [ ] employee-card-action.module.scss
+    │   │   │       └── [ ] index.ts
     │   │   ├── queries/
     │   │   │   └── [x] employee.query.ts
     │   │   ├── services/
@@ -80,16 +89,42 @@ app/frontend/
     │   │
     │   ├── hero/
     │   │   ├── [x] index.ts
+    │   │   ├── components/
+    │   │   │   ├── hero-doctor-photo/
+    │   │   │   │   ├── [ ] hero-doctor-photo.tsx
+    │   │   │   │   ├── [ ] hero-doctor-photo.module.scss
+    │   │   │   │   └── [ ] index.ts
+    │   │   │   ├── hero-headline/
+    │   │   │   │   ├── [ ] hero-headline.tsx
+    │   │   │   │   ├── [ ] hero-headline.module.scss
+    │   │   │   │   └── [ ] index.ts
+    │   │   │   ├── hero-rating-badge/
+    │   │   │   │   ├── [ ] hero-rating-badge.tsx
+    │   │   │   │   ├── [ ] hero-rating-badge.module.scss
+    │   │   │   │   └── [ ] index.ts
+    │   │   │   ├── hero-review-card/
+    │   │   │   │   ├── [ ] hero-review-card.tsx
+    │   │   │   │   ├── [ ] hero-review-card.module.scss
+    │   │   │   │   └── [ ] index.ts
+    │   │   │   └── hero-tech-card/
+    │   │   │       ├── [ ] hero-tech-card.tsx
+    │   │   │       ├── [ ] hero-tech-card.module.scss
+    │   │   │       └── [ ] index.ts
     │   │   └── views/
     │   │       ├── [ ] hero-section.tsx
     │   │       └── [ ] hero-section.module.scss
     │   │
     │   ├── product/
     │   │   ├── [x] index.ts
-    │   │   ├── components/elements/product-card/
-    │   │   │   ├── [ ] product-card.tsx
-    │   │   │   ├── [ ] product-card.module.scss
-    │   │   │   └── [ ] index.ts
+    │   │   ├── components/elements/
+    │   │   │   ├── product-card/
+    │   │   │   │   ├── [ ] product-card.tsx
+    │   │   │   │   ├── [ ] product-card.module.scss
+    │   │   │   │   └── [ ] index.ts
+    │   │   │   └── product-card-action/
+    │   │   │       ├── [ ] product-card-action.tsx
+    │   │   │       ├── [ ] product-card-action.module.scss
+    │   │   │       └── [ ] index.ts
     │   │   ├── queries/
     │   │   │   └── [x] product.query.ts
     │   │   ├── services/
@@ -130,10 +165,14 @@ app/frontend/
         │   │   ├── [x] section-caption.tsx
         │   │   ├── [x] section-caption.module.scss
         │   │   └── [x] index.ts
-        │   ├── forms/application-form/
-        │   │   ├── [x] application-form.tsx
-        │   │   ├── [x] application-form.module.scss
-        │   │   └── [x] index.ts
+        │   ├── forms/
+        │   │   ├── application-form/
+        │   │   │   ├── [x] application-form.tsx
+        │   │   │   ├── [x] application-form.module.scss
+        │   │   │   └── [x] index.ts
+        │   │   └── application-modal/
+        │   │       ├── [ ] application-modal.tsx
+        │   │       └── [ ] index.ts
         │   ├── layout/
         │   │   ├── [x] layout.tsx
         │   │   ├── footer/
@@ -163,6 +202,10 @@ app/frontend/
         │   │       ├── header-location/
         │   │       │   ├── [ ] header-location.tsx
         │   │       │   ├── [ ] header-location.module.scss
+        │   │       │   └── [ ] index.ts
+        │   │       ├── header-mobile-menu/
+        │   │       │   ├── [ ] header-mobile-menu.tsx
+        │   │       │   ├── [ ] header-mobile-menu.module.scss
         │   │       │   └── [ ] index.ts
         │   │       └── header-phone-call/
         │   │           ├── [ ] header-phone-call.tsx
@@ -199,6 +242,11 @@ app/frontend/
         │       │   ├── [x] logo.tsx
         │       │   ├── [x] logo.props.ts
         │       │   └── [x] index.ts
+        │       ├── modal/
+        │       │   ├── [ ] modal.tsx
+        │       │   ├── [ ] modal.module.scss
+        │       │   ├── [ ] modal.props.ts
+        │       │   └── [ ] index.ts
         │       ├── pulse/
         │       │   ├── [x] pulse.tsx
         │       │   ├── [x] pulse.module.scss
@@ -221,9 +269,11 @@ app/frontend/
         │   ├── [x] error.constants.ts
         │   ├── [x] regex.constants.ts
         │   ├── [x] root.constants.ts
+        │   ├── [ ] schema.constants.ts
         │   └── [ ] seo.constants.ts
         ├── hooks/
-        │   └── [x] use-media-query.ts
+        │   ├── [x] use-media-query.ts
+        │   └── [ ] use-intersection-observer.ts
         ├── providers/
         │   ├── [x] providers.tsx
         │   ├── [x] index.ts
