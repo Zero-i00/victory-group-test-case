@@ -8,9 +8,9 @@ import {ProductSection} from '@/features/product'
 import {productQuery} from '@/features/product/queries/product.query'
 import {ReviewSection} from '@/features/review'
 import {reviewQuery} from '@/features/review/queries/review.query'
-import {ApplicationModal} from '@/shared/components/forms/application-modal'
-import {getQueryClient} from '@/shared/providers/query'
+import {ApplicationModal} from '@/shared/components/modals/application-modal'
 import {Loader} from '@/shared/components/ui/loader'
+import {getQueryClient} from '@/shared/providers/query'
 
 export default async function Home() {
     const queryClient = getQueryClient()
